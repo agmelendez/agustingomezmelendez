@@ -253,8 +253,50 @@
     }
     .doc-download:hover { color: var(--secondary); }
 
+    .pdf-viewer-section { display: flex; gap: 0; border-radius: 18px; overflow: hidden; min-height: 520px; background: rgba(255,255,255,0.85); border: 1px solid var(--glass-border); }
+    .pdf-list-panel { width: 320px; min-width: 260px; max-height: 520px; overflow-y: auto; border-right: 1px solid rgba(15,42,67,0.1); flex-shrink: 0; }
+    .pdf-list-panel::-webkit-scrollbar { width: 5px; }
+    .pdf-list-panel::-webkit-scrollbar-thumb { background: rgba(15,42,67,0.18); border-radius: 10px; }
+    .pdf-list-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px; cursor: pointer;
+      border-bottom: 1px solid rgba(15,42,67,0.06);
+      transition: all 0.2s ease; font-size: 0.82rem;
+      color: var(--ink); position: relative;
+    }
+    .pdf-list-item:hover { background: rgba(31,111,139,0.08); }
+    .pdf-list-item.active { background: linear-gradient(135deg, rgba(15,42,67,0.1), rgba(31,111,139,0.12)); font-weight: 600; }
+    .pdf-list-item.active::before { content:""; position:absolute; left:0; top:8px; bottom:8px; width:3px; border-radius:0 3px 3px 0; background:var(--secondary); }
+    .pdf-list-item .pdf-item-icon { width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; flex-shrink:0; }
+    .pdf-viewer-panel { flex:1; display:flex; flex-direction:column; background:rgba(245,248,251,0.6); }
+    .pdf-viewer-toolbar { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; border-bottom:1px solid rgba(15,42,67,0.08); background:rgba(255,255,255,0.7); }
+    .pdf-viewer-toolbar .pdf-title-display { font-size:0.85rem; font-weight:600; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%; }
+    .pdf-viewer-toolbar .pdf-actions { display:flex; gap:8px; }
+    .pdf-viewer-toolbar .pdf-action-btn {
+      display:inline-flex; align-items:center; gap:5px; font-size:0.75rem; font-weight:600;
+      padding:6px 12px; border-radius:999px; border:1px solid rgba(15,42,67,0.15);
+      background:rgba(255,255,255,0.8); color:var(--primary); cursor:pointer; transition:all 0.2s;
+    }
+    .pdf-viewer-toolbar .pdf-action-btn:hover { background:var(--primary); color:#fff; }
+    .pdf-viewer-toolbar .pdf-action-btn.primary-btn { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; border:none; }
+    .pdf-viewer-toolbar .pdf-action-btn.primary-btn:hover { transform:translateY(-1px); box-shadow:0 6px 16px rgba(15,42,67,0.3); }
+    .pdf-viewer-frame { flex:1; border:none; background:#f0f0f0; }
+    .pdf-viewer-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:var(--muted); }
+    .pdf-viewer-empty svg { opacity:0.3; }
+    .pdf-viewer-empty p { font-size:0.9rem; }
+
+    @media (max-width:768px) {
+      .pdf-viewer-section { flex-direction:column; min-height:auto; }
+      .pdf-list-panel { width:100%; max-height:220px; border-right:none; border-bottom:1px solid rgba(15,42,67,0.1); }
+      .pdf-viewer-panel { min-height:400px; }
+    }
+
+    .doc-compact { display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:12px; border:1px solid rgba(15,42,67,0.08); background:rgba(255,255,255,0.6); transition:all 0.2s; }
+    .doc-compact:hover { background:rgba(31,111,139,0.08); border-color:rgba(31,111,139,0.25); transform:translateY(-1px); }
+
     @media print {
       .print-btn { display: none; }
+      .pdf-viewer-section { display:none; }
       .glass-card { background: #fff; border-color: #dfe6ee; box-shadow: none; }
       body { background: #fff !important; }
       .page-shell::before { display: none; }
@@ -386,6 +428,97 @@
       </section>
 
       <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-3">
+       <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#d9a441] to-[#1f6f8b] flex items-center justify-center">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        </div>
+        <h2 class="section-title text-xl font-bold">Informes Técnicos</h2>
+        <span class="badge ml-auto">15 informes</span>
+       </div>
+       <p class="text-sm text-gray-600 mb-4">Seleccione un informe de la lista para previsualizarlo. Puede descargarlo o abrirlo en una ventana nueva.</p>
+       <div class="pdf-viewer-section">
+        <div class="pdf-list-panel" id="pdfListPanel">
+         <div class="pdf-list-item active" data-pdf="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" data-title="Estimación Probabilística de Conflicto Global">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Estimación Probabilística de Conflicto Global</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Estado_del_Arte_Estafas_PAM_UCR_2026_CIOdD.pdf" data-title="Estado del Arte: Estafas PAM UCR 2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Estado del Arte: Estafas PAM UCR 2026</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Boletin_CIOdD_Tendencias_Epidemiologicas_2025_2026_CIOdD.pdf" data-title="Tendencias Epidemiológicas 2025-2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Tendencias Epidemiológicas 2025-2026</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_epidemiologico_enfermedades_respiratorias_Costa_Rica_2019_2026_CIOdD.pdf" data-title="Enfermedades Respiratorias CR 2019-2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Enfermedades Respiratorias CR 2019-2026</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_Biodiversidad_Medio_Ambiente_CR_CIOdD.pdf" data-title="Biodiversidad y Medio Ambiente CR">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Biodiversidad y Medio Ambiente CR</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_Seguridad_Ciudadana_Crimen_Organizado_CR_CIOdD.pdf" data-title="Seguridad Ciudadana y Crimen Organizado CR">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Seguridad Ciudadana y Crimen Organizado CR</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_Parque_Empresarial_Formal_Informal_CR_CIOdD.pdf" data-title="Parque Empresarial Formal e Informal CR">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Parque Empresarial Formal e Informal CR</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_Transporte_Congestionamiento_Vial_CR_CIOdD.pdf" data-title="Transporte y Congestionamiento Vial CR">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Transporte y Congestionamiento Vial CR</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_congestion_infraestructura_Waze_CR_2019_2026_mejorado_CIOdD.pdf" data-title="Congestión e Infraestructura Waze CR 2019-2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Congestión e Infraestructura Waze CR 2019-2026</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Policy_Brief_Grupos_Edad_Mercado_Laboral_Costa_Rica_2025_2026_CIOdD.pdf" data-title="Grupos de Edad y Mercado Laboral CR 2025-2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Grupos de Edad y Mercado Laboral CR 2025-2026</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_macroeconomica_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución Macroeconómica CR 1994-2025">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Evolución Macroeconómica CR 1994-2025</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_demografica_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución Demográfica CR 1994-2025">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Evolución Demográfica CR 1994-2025</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_educacion_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución de la Educación CR 1994-2025">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Evolución de la Educación CR 1994-2025</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_ciencia_tecnologia_Costa_Rica_1994-2026_CIOdD.pdf" data-title="Evolución Ciencia y Tecnología CR 1994-2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Evolución Ciencia y Tecnología CR 1994-2026</span>
+         </div>
+         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_agricultura_sector_agropecuario_Costa_Rica_1994-2026_CIOdD.pdf" data-title="Evolución Agricultura y Sector Agropecuario CR 1994-2026">
+          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <span>Evolución Agricultura y Sector Agropecuario CR</span>
+         </div>
+        </div>
+        <div class="pdf-viewer-panel">
+         <div class="pdf-viewer-toolbar">
+          <span class="pdf-title-display" id="pdfTitleDisplay">Estimación Probabilística de Conflicto Global</span>
+          <div class="pdf-actions">
+           <a id="pdfOpenBtn" href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" target="_blank" class="pdf-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            Abrir
+           </a>
+           <a id="pdfDownloadBtn" href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" download class="pdf-action-btn primary-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Descargar
+           </a>
+          </div>
+         </div>
+         <iframe id="pdfViewerFrame" class="pdf-viewer-frame" src="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf"></iframe>
+        </div>
+       </div>
+      </section>
+
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-4">
        <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
@@ -393,73 +526,21 @@
         <h2 class="section-title text-xl font-bold">Investigaciones y Publicaciones</h2>
         <span class="badge ml-auto">13 documentos</span>
        </div>
-       <p class="text-sm text-gray-600 mb-5">Artículos en proceso de publicación desarrollados en el CIOdD-UCR y en OMiPYMEs-UNED. Descarga directa en PDF.</p>
-       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Sondeo 2025</p>
-         <a href="Articulos/CIOdD_UCR_Articulo_sondeo_2025.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Índice de Desarrollo Humano (IDH) y PIB</p>
-         <a href="Articulos/CIOdD_UCR_articulo_idh_pib_v2.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Impacto de Accidentes en Carretera 2025</p>
-         <a href="Articulos/CIOdD_UCR_Impacto Accidentes en Carretera 2025.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Accidentes en Carretera (Anonimizado)</p>
-         <a href="Articulos/Articulo Accidentes Anonimizado.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Hacia una Economía Azul</p>
-         <a href="Articulos/CIOdD_UCR_Hacia una economia azul.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Índice de Desempeño Ambiental</p>
-         <a href="Articulos/CIOdD_UCR_Indice de Desempeño Ambiental.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Zonas Azules</p>
-         <a href="Articulos/CIOdD_UCR_Artículo zonas Azules 17_02_2026.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Inseguridad Alimentaria</p>
-         <a href="Articulos/CIOdD_UCR_Artículo de Inseguridad_Alimentaria  17_02_2026.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Simulación Montecarlo &mdash; Elecciones 2026</p>
-         <a href="Articulos/CIOdD_UCR_Simulación Montecarlo Elecciones presidenciales 2026.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Simulación Cognitiva Costa Rica 2026</p>
-         <a href="Articulos/CIOdD_UCR_Articulo_simulacion_cognitiva_CR_2026.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag ucr">CIOdD-UCR</span></div>
-         <p class="font-semibold text-sm text-gray-800">Fine-Tuning Llama 3.2 (1B) en HPC-UCR</p>
-         <a href="Articulos/CIOdD_UCR_Fine-Tunning Llama 3.2 -1B- in HPC-UCR.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag uned">OMiPYMEs-UNED</span></div>
-         <p class="font-semibold text-sm text-gray-800">GUESS 2023</p>
-         <a href="Articulos/OMIPYMES_UNED_Articulo_GUESS_2023.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
-        <div class="doc-card">
-         <div class="flex items-start justify-between gap-2"><div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span class="doc-tag uned">OMiPYMEs-UNED</span></div>
-         <p class="font-semibold text-sm text-gray-800">GUESS 2021</p>
-         <a href="Articulos/OMIPYMES_UNED_Articulo_Guess_2021.pdf" download class="doc-download"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Descargar PDF</a>
-        </div>
+       <p class="text-sm text-gray-600 mb-4">Artículos en proceso de publicación desarrollados en el CIOdD-UCR y en OMiPYMEs-UNED.</p>
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <a href="Articulos/CIOdD_UCR_Articulo_sondeo_2025.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Sondeo 2025</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+<a href="Articulos/CIOdD_UCR_articulo_idh_pib_v2.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">IDH y PIB</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Impacto Accidentes en Carretera 2025.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Impacto Accidentes en Carretera 2025</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/Articulo Accidentes Anonimizado.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Accidentes (Anonimizado)</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Hacia una economia azul.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Hacia una Economía Azul</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Indice de Desempeño Ambiental.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Índice de Desempeño Ambiental</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Artículo zonas Azules 17_02_2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Zonas Azules</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Artículo de Inseguridad_Alimentaria  17_02_2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Inseguridad Alimentaria</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Simulación Montecarlo Elecciones presidenciales 2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Simulación Montecarlo &mdash; Elecciones 2026</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Articulo_simulacion_cognitiva_CR_2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Simulación Cognitiva CR 2026</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/CIOdD_UCR_Fine-Tunning Llama 3.2 -1B- in HPC-UCR.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Fine-Tuning Llama 3.2 (1B) en HPC-UCR</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/OMIPYMES_UNED_Articulo_GUESS_2023.pdf" download class="doc-compact"><span class="doc-tag uned" style="flex-shrink:0">UNED</span><span class="text-sm text-gray-800 flex-1">GUESS 2023</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        <a href="Articulos/OMIPYMES_UNED_Articulo_Guess_2021.pdf" download class="doc-compact"><span class="doc-tag uned" style="flex-shrink:0">UNED</span><span class="text-sm text-gray-800 flex-1">GUESS 2021</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
        </div>
       </section>
 
@@ -633,5 +714,19 @@
     </footer>
    </div>
   </div>
+  <script>
+   document.getElementById('pdfListPanel').addEventListener('click', function(e) {
+    var item = e.target.closest('.pdf-list-item');
+    if (!item) return;
+    var pdf = item.getAttribute('data-pdf');
+    var title = item.getAttribute('data-title');
+    this.querySelectorAll('.pdf-list-item').forEach(function(el) { el.classList.remove('active'); });
+    item.classList.add('active');
+    document.getElementById('pdfViewerFrame').src = pdf;
+    document.getElementById('pdfTitleDisplay').textContent = title;
+    document.getElementById('pdfOpenBtn').href = pdf;
+    document.getElementById('pdfDownloadBtn').href = pdf;
+   });
+  </script>
  </body>
 </html>
