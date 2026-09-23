@@ -1,346 +1,88 @@
 <!doctype html>
-<html lang="es" class="h-full">
+<html lang="es" class="h-full scroll-smooth">
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agustín Gómez Meléndez | CV e Investigaciones</title>
+  <title>Agustín Gómez Meléndez | Investigador, Estadístico y Científico de Datos (UCR · UNED)</title>
+  
+  <!-- SEO & Metadatos -->
+  <meta name="description" content="Currículum, investigaciones, informes técnicos y artículos de opinión de Agustín Gómez Meléndez (2026). Estadístico y especialista en Sistemas de Información. Coordinador de Proyectos CIOdD-UCR, Líder en UNED y Director de Investigación y Proyectos en FAIR (https://www.fair.cr/).">
+  <meta name="keywords" content="Agustín Gómez Meléndez, Estadística, Inteligencia Artificial, FAIR, FAIR-CR, Costa Rica, UCR, UNED, CIOdD, OMiPYMEs, ODS, Datos Abiertos, Epidemiología, Movilidad Waze">
+  <meta name="author" content="Agustín Gómez Meléndez">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:title" content="Agustín Gómez Meléndez | Portafolio e Investigaciones 2026">
+  <meta property="og:description" content="Estadístico, especialista en Sistemas de Información, Coordinador en CIOdD-UCR, Líder en UNED y Director de Investigación y Proyectos en FAIR (https://www.fair.cr/).">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="IMG_2942.jpeg">
+  <meta property="og:locale" content="es_CR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agustín Gómez Meléndez | Portafolio 2026">
+  <meta name="twitter:description" content="Estadística, IA aplicada, análisis de políticas públicas y ODS en Costa Rica.">
+  <meta name="twitter:image" content="IMG_2942.jpeg">
+  
+  <!-- Licencia Creative Commons Metadata -->
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- Favicon SVG Embebido -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230f2a43'/%3E%3Cpath d='M9 22L14 15L19 18L24 10' stroke='%23d9a441' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='9' cy='22' r='2' fill='%231f6f8b'/%3E%3Ccircle cx='14' cy='15' r='2' fill='%231f6f8b'/%3E%3Ccircle cx='19' cy='18' r='2' fill='%231f6f8b'/%3E%3Ccircle cx='24' cy='10' r='2' fill='%23d9a441'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0f2a43;
-      --secondary: #1f6f8b;
-      --accent: #d9a441;
-      --uned: #2f9e7a;
-      --ink: #0b1f33;
-      --muted: #5b6b7a;
-      --card: rgba(255, 255, 255, 0.9);
-      --glass-border: rgba(15, 42, 67, 0.12);
-      --shadow-soft: 0 10px 30px rgba(15, 42, 67, 0.12);
-      --shadow-strong: 0 22px 60px rgba(15, 42, 67, 0.18);
-      --font-body: "Outfit", sans-serif;
-      --font-display: "Space Grotesk", sans-serif;
-      --font-mono: "JetBrains Mono", monospace;
-      --bg-base: #f3f6f9;
-      --bg-mid: #eef3f7;
-      --bg-deep: #e5edf4;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 12% 15%, rgba(217, 164, 65, 0.12), transparent 48%),
-        radial-gradient(circle at 88% 18%, rgba(31, 111, 139, 0.16), transparent 45%),
-        linear-gradient(135deg, var(--bg-base) 0%, var(--bg-mid) 55%, var(--bg-deep) 100%);
-      min-height: 100vh;
-    }
-
-    h1, h2, h3, .display { font-family: var(--font-display); letter-spacing: -0.02em; }
-
-    .page-shell { position: relative; padding: 40px 20px 64px; }
-
-    .bg-ornament {
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 6% 30%, rgba(15, 42, 67, 0.08), transparent 35%),
-        radial-gradient(circle at 92% 35%, rgba(31, 111, 139, 0.14), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(217, 164, 65, 0.12), transparent 35%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .page-shell::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(15, 42, 67, 0.06) 1px, transparent 1px);
-      background-size: 24px 24px;
-      pointer-events: none;
-      opacity: 0.35;
-    }
-
-    .page-shell > * { position: relative; z-index: 1; }
-
-    .glass-card {
-      background: var(--card);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-
-    .hero-card { box-shadow: var(--shadow-strong); position: relative; overflow: hidden; }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 60%;
-      height: 180%;
-      background: conic-gradient(from 180deg at 50% 50%, rgba(217,164,65,0.10), rgba(31,111,139,0.14), rgba(15,42,67,0.10), rgba(217,164,65,0.10));
-      filter: blur(40px);
-      pointer-events: none;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 70%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .accent-line { background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 45%, transparent 100%); }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.7rem;
-      color: var(--secondary);
-      font-weight: 600;
-      font-family: var(--font-mono);
-    }
-
-    .kicker::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(217,164,65,0.18);
-    }
-
-    .role-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(15, 42, 67, 0.14);
-      background: rgba(255,255,255,0.6);
-      color: var(--ink);
-    }
-
-    .role-badge .dot { width: 6px; height: 6px; border-radius: 50%; }
-    .role-badge.ucr .dot { background: var(--secondary); }
-    .role-badge.uned .dot { background: var(--uned); }
-
-    .timeline-dot {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      box-shadow: 0 0 0 4px rgba(15, 42, 67, 0.12);
-    }
-
-    .skill-tag {
-      background: linear-gradient(135deg, rgba(15, 42, 67, 0.08), rgba(31, 111, 139, 0.12));
-      border: 1px solid rgba(15, 42, 67, 0.18);
-      transition: all 0.25s ease;
-    }
-
-    .skill-tag:hover {
-      background: linear-gradient(135deg, rgba(15, 42, 67, 0.18), rgba(31, 111, 139, 0.2));
-      transform: translateY(-2px);
-    }
-
-    .section-card { transition: all 0.3s ease; box-shadow: var(--shadow-soft); }
-    .section-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(15, 42, 67, 0.16); }
-
-    .section-title { font-size: 1.1rem; color: var(--ink); }
-
-    .contact-icon { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(15, 42, 67, 0.08);
-      border: 1px solid rgba(15, 42, 67, 0.15);
-      color: var(--primary);
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .print-btn {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      transition: all 0.3s ease;
-    }
-    .print-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 28px rgba(15, 42, 67, 0.35); }
-
-    .pill { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; font-weight: 600; letter-spacing: 0.03em; font-size: 0.7rem; }
-    .pill.uned { background: linear-gradient(135deg, #14532d, var(--uned)); }
-
-    .soft-panel {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 248, 251, 0.9));
-      border: 1px solid rgba(15, 42, 67, 0.08);
-      border-radius: 20px;
-      padding: 14px 18px;
-    }
-
-    .highlight-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-    .highlight-item { background: rgba(15, 42, 67, 0.05); border: 1px solid rgba(15, 42, 67, 0.1); border-radius: 16px; padding: 14px 16px; }
-    .highlight-item span { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
-    .highlight-item strong { font-size: 0.95rem; color: var(--ink); font-weight: 600; }
-
-    .animate-fade-in { animation: fadeIn 0.7s ease-out forwards; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    .stagger-1 { animation-delay: 0.1s; }
-    .stagger-2 { animation-delay: 0.2s; }
-    .stagger-3 { animation-delay: 0.3s; }
-    .stagger-4 { animation-delay: 0.4s; }
-    .stagger-5 { animation-delay: 0.5s; }
-    .stagger-6 { animation-delay: 0.6s; }
-
-    .profile-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 9999px; }
-    .profile-avatar { width: 9rem; height: 9rem; }
-
-    @media (max-width: 480px) { .profile-avatar { width: 6rem; height: 6rem; } .page-shell { padding: 28px 16px 48px; } }
-    @media (min-width: 481px) and (max-width: 768px) { .profile-avatar { width: 8rem; height: 8rem; } }
-    @media (min-width: 1025px) { .profile-avatar { width: 10rem; height: 10rem; } }
-
-    .doc-card {
-      position: relative;
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(15, 42, 67, 0.1);
-      transition: all 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .doc-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15, 42, 67, 0.14); border-color: rgba(31,111,139,0.35); }
-
-    .doc-icon {
-      width: 38px; height: 38px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff; flex-shrink: 0;
-    }
-
-    .doc-tag {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 3px 8px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      font-family: var(--font-mono);
-    }
-    .doc-tag.ucr { background: rgba(31,111,139,0.14); color: var(--secondary); }
-    .doc-tag.uned { background: rgba(47,158,122,0.14); color: var(--uned); }
-
-    .doc-download {
-      margin-top: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-    .doc-download:hover { color: var(--secondary); }
-
-    .pdf-viewer-section { display: flex; gap: 0; border-radius: 18px; overflow: hidden; min-height: 520px; background: rgba(255,255,255,0.85); border: 1px solid var(--glass-border); }
-    .pdf-list-panel { width: 320px; min-width: 260px; max-height: 520px; overflow-y: auto; border-right: 1px solid rgba(15,42,67,0.1); flex-shrink: 0; }
-    .pdf-list-panel::-webkit-scrollbar { width: 5px; }
-    .pdf-list-panel::-webkit-scrollbar-thumb { background: rgba(15,42,67,0.18); border-radius: 10px; }
-    .pdf-list-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 12px 16px; cursor: pointer;
-      border-bottom: 1px solid rgba(15,42,67,0.06);
-      transition: all 0.2s ease; font-size: 0.82rem;
-      color: var(--ink); position: relative;
-    }
-    .pdf-list-item:hover { background: rgba(31,111,139,0.08); }
-    .pdf-list-item.active { background: linear-gradient(135deg, rgba(15,42,67,0.1), rgba(31,111,139,0.12)); font-weight: 600; }
-    .pdf-list-item.active::before { content:""; position:absolute; left:0; top:8px; bottom:8px; width:3px; border-radius:0 3px 3px 0; background:var(--secondary); }
-    .pdf-list-item .pdf-item-icon { width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; flex-shrink:0; }
-    .pdf-viewer-panel { flex:1; display:flex; flex-direction:column; background:rgba(245,248,251,0.6); }
-    .pdf-viewer-toolbar { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; border-bottom:1px solid rgba(15,42,67,0.08); background:rgba(255,255,255,0.7); }
-    .pdf-viewer-toolbar .pdf-title-display { font-size:0.85rem; font-weight:600; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%; }
-    .pdf-viewer-toolbar .pdf-actions { display:flex; gap:8px; }
-    .pdf-viewer-toolbar .pdf-action-btn {
-      display:inline-flex; align-items:center; gap:5px; font-size:0.75rem; font-weight:600;
-      padding:6px 12px; border-radius:999px; border:1px solid rgba(15,42,67,0.15);
-      background:rgba(255,255,255,0.8); color:var(--primary); cursor:pointer; transition:all 0.2s;
-    }
-    .pdf-viewer-toolbar .pdf-action-btn:hover { background:var(--primary); color:#fff; }
-    .pdf-viewer-toolbar .pdf-action-btn.primary-btn { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; border:none; }
-    .pdf-viewer-toolbar .pdf-action-btn.primary-btn:hover { transform:translateY(-1px); box-shadow:0 6px 16px rgba(15,42,67,0.3); }
-    .pdf-viewer-frame { flex:1; border:none; background:#f0f0f0; }
-    .pdf-viewer-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:var(--muted); }
-    .pdf-viewer-empty svg { opacity:0.3; }
-    .pdf-viewer-empty p { font-size:0.9rem; }
-
-    @media (max-width:768px) {
-      .pdf-viewer-section { flex-direction:column; min-height:auto; }
-      .pdf-list-panel { width:100%; max-height:220px; border-right:none; border-bottom:1px solid rgba(15,42,67,0.1); }
-      .pdf-viewer-panel { min-height:400px; }
-    }
-
-    .doc-compact { display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:12px; border:1px solid rgba(15,42,67,0.08); background:rgba(255,255,255,0.6); transition:all 0.2s; }
-    .doc-compact:hover { background:rgba(31,111,139,0.08); border-color:rgba(31,111,139,0.25); transform:translateY(-1px); }
-
-    @media print {
-      .print-btn { display: none; }
-      .pdf-viewer-section { display:none; }
-      .glass-card { background: #fff; border-color: #dfe6ee; box-shadow: none; }
-      body { background: #fff !important; }
-      .page-shell::before { display: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Estilos Centrales -->
+  <link rel="stylesheet" href="styles.css">
  </head>
  <body class="min-h-screen">
   <div class="bg-ornament" aria-hidden="true"></div>
+
+  <!-- Barra Flotante de Acciones Rápidas -->
+  <aside aria-label="Acciones rápidas" class="fixed-nav fixed top-4 right-4 z-50 flex items-center gap-2">
+   <a href="Listaproyectos.pdf" download class="print-btn text-white px-4 py-2 rounded-full font-medium flex items-center gap-2 shadow-lg text-sm transition-all" title="Descargar Lista Completa de Proyectos en PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+    <span class="hidden sm:inline">Lista Proyectos (PDF)</span>
+   </a>
+   <button onclick="window.print()" class="print-btn text-white px-4 py-2 rounded-full font-medium flex items-center gap-2 shadow-lg text-sm transition-all" title="Imprimir o Exportar Currículum a PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+    <span class="hidden sm:inline">Imprimir / PDF</span>
+   </button>
+  </aside>
+
   <div class="page-shell">
-   <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
-    <a href="Listaproyectos.pdf" download class="print-btn text-white px-4 py-2 rounded-full font-medium flex items-center gap-2 shadow-lg">
-     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-     Proyectos
-    </a>
-    <button onclick="window.print()" class="print-btn text-white px-4 py-2 rounded-full font-medium flex items-center gap-2 shadow-lg">
-     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-     Imprimir
-    </button>
-   </div>
+   <div class="max-w-5xl mx-auto p-4 sm:p-6 md:p-10">
 
-   <div class="max-w-5xl mx-auto p-6 md:p-10">
-
-    <header class="glass-card hero-card rounded-3xl p-8 md:p-10 mb-8 animate-fade-in">
-     <div class="flex flex-col md:flex-row items-center gap-8">
-      <div class="relative">
+    <!-- Tarjeta Principal / Hero Profile -->
+    <header class="glass-card hero-card rounded-3xl p-6 sm:p-8 md:p-10 mb-8 animate-fade-in">
+     <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+      <div class="relative flex-shrink-0">
        <div class="profile-avatar rounded-full bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] p-1 shadow-2xl">
         <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-         <img src="IMG_2942.jpeg" alt="Foto de Agustín Gómez Meléndez" class="profile-photo" loading="lazy">
+         <img src="IMG_2942.jpeg" alt="Fotografía de Agustín Gómez Meléndez" class="profile-photo" loading="eager">
         </div>
        </div>
-       <div class="absolute -bottom-1 -right-1 w-9 h-9 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+       <div class="absolute -bottom-1 -right-1 w-8 h-8 sm:w-9 sm:h-9 bg-emerald-500 rounded-full border-4 border-white flex items-center justify-center shadow" title="Perfil Profesional Activo">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
        </div>
       </div>
 
       <div class="flex-1 text-center md:text-left">
        <span class="kicker">Investigador &middot; Ciencia de Datos &amp; IA Aplicada</span>
-       <h1 id="name-display" class="text-3xl md:text-4xl font-bold gradient-text mt-2 mb-3">Agustín Gómez Meléndez</h1>
+       <h1 id="name-display" class="text-3xl sm:text-4xl font-bold gradient-text mt-2 mb-2">Agustín Gómez Meléndez</h1>
        <div class="accent-line h-1 w-32 rounded-full mx-auto md:mx-0 mb-4"></div>
 
-       <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-5">
+       <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
         <span class="role-badge ucr"><span class="dot"></span>Coordinador de Proyectos &middot; CIOdD-UCR</span>
         <span class="role-badge uned"><span class="dot"></span>Líder Equipo OMiPYMEs &middot; UNED</span>
         <span class="role-badge uned"><span class="dot"></span>Líder Equipo IA en Transformación Digital &middot; UNED</span>
+        <a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="role-badge hover:border-[#1f6f8b] hover:text-[#0f2a43] transition-colors" title="Visitar Fundación FAIR (https://www.fair.cr/)"><span class="dot" style="background:#d9a441"></span>Director de Investigación &amp; Proyectos &middot; FAIR</a>
        </div>
 
        <div class="highlight-row mb-5">
@@ -349,44 +91,80 @@
         <div class="highlight-item"><span>Enfoque</span><strong>Impacto sostenible y ODS</strong></div>
        </div>
 
-       <div class="flex flex-wrap justify-center md:justify-start gap-3">
-        <a href="mailto:gomez.agustin@gmail.com" class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0f2a43] transition-colors">
-         <span class="contact-icon w-8 h-8 rounded-full flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+       <div class="flex flex-wrap justify-center md:justify-start items-center gap-3 text-sm">
+        <a href="mailto:gomez.agustin@gmail.com" class="flex items-center gap-2 text-gray-700 hover:text-[#0f2a43] transition-colors" title="Enviar correo personal">
+         <span class="contact-icon w-7 h-7 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
          </span>
-         <span id="email-display">gomez.agustin@gmail.com</span>
+         <span>gomez.agustin@gmail.com</span>
         </a>
-        <a href="https://orcid.org/0000-0002-7383-3754" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0f2a43] transition-colors">
-         <span class="contact-icon w-8 h-8 rounded-full flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
+        <a href="https://orcid.org/0000-0002-7383-3754" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-[#0f2a43] transition-colors" title="Ver perfil académico ORCID">
+         <span class="contact-icon w-7 h-7 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
          </span>
-         ORCID
+         <span>ORCID: 0000-0002-7383-3754</span>
         </a>
-        <span class="flex items-center gap-2 text-sm text-gray-600">
-         <span class="contact-icon w-8 h-8 rounded-full flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span class="flex items-center gap-2 text-gray-600">
+         <span class="contact-icon w-7 h-7 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
          </span>
-         San Joaquín de Flores, Costa Rica
+         <span>San Joaquín de Flores, Costa Rica</span>
         </span>
        </div>
       </div>
      </div>
     </header>
 
+    <!-- Barra de Búsqueda y Filtros Temáticos en Tiempo Real -->
+    <section class="search-filter-section glass-card rounded-2xl p-5 mb-8 animate-fade-in stagger-1">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
+      <div class="search-input-wrapper">
+       <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+       </span>
+       <input type="text" id="globalSearchInput" class="search-input" placeholder="Buscar por tema, palabra clave o título (ej: IA, Waze, Covid, Llama, ODS, Epidemiología)..." aria-label="Buscar en todo el portafolio">
+       <button id="clearSearchBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs font-semibold px-2 py-1 rounded bg-gray-100 hidden" title="Limpiar búsqueda">✕ Limpiar</button>
+      </div>
+      <div class="flex-shrink-0 text-xs font-semibold text-gray-500 font-mono" id="searchResultCount">
+       58 documentos en PDF disponibles
+      </div>
+     </div>
+
+     <!-- Chips de Filtrado Rápido -->
+     <div class="flex flex-wrap items-center gap-2 pt-1 border-t border-gray-100">
+      <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mr-1">Filtrar por:</span>
+      <button class="filter-chip active" data-filter="all">Todos</button>
+      <button class="filter-chip" data-filter="ia">Inteligencia Artificial</button>
+      <button class="filter-chip" data-filter="salud">Salud &amp; Epidemiología</button>
+      <button class="filter-chip" data-filter="movilidad">Movilidad &amp; Waze</button>
+      <button class="filter-chip" data-filter="economia">Economía &amp; ODS</button>
+      <button class="filter-chip" data-filter="opinion">Opinión &amp; Prensa</button>
+      <button class="filter-chip" data-filter="ucr">CIOdD-UCR</button>
+      <button class="filter-chip" data-filter="uned">OMiPYMEs-UNED</button>
+     </div>
+    </section>
+
+    <!-- Estructura Principal en Columnas -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+     <!-- Columna Central / Izquierda (Contenido Principal) -->
      <div class="lg:col-span-2 space-y-6">
 
-      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-1">
-       <div class="flex items-center gap-3 mb-5">
+      <!-- Sección 1: Perfil Profesional -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-1" id="perfil">
+       <div class="flex items-center gap-3 mb-4">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </div>
         <h2 class="section-title text-xl font-bold">Perfil Profesional</h2>
        </div>
-       <p id="profile-display" class="text-gray-600 leading-relaxed text-justify">Profesional en el campo de la Estadística con Máster en Sistemas de Información. Más de 25 años de experiencia en Gestión y Administración de Información, así como en la consolidación de relaciones interinstitucionales. Especializado en desarrollo sostenible, ODS, datos abiertos, gobierno abierto, e inteligencia artificial. Coordino proyectos de investigación en el Centro de Investigación Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica, y en la Universidad Estatal a Distancia lidero el Equipo de OMiPYMEs y el Equipo de Inteligencia Artificial en Transformación Digital.</p>
+       <p id="profile-display" class="text-gray-600 leading-relaxed text-justify">
+        Estadístico y especialista en Sistemas de Información, con más de 25 años de experiencia en investigación y docencia. Se desempeña como investigador y coordinador de proyectos en el Centro de Investigación Observatorio del Desarrollo de la Universidad de Costa Rica (UCR), además trabaja en la Universidad Estatal a Distancia coordinando el Observatorio MiPyMEs y lidera el equipo de Inteligencia Artificial en Transformación Digital; además es el director de investigación y director de proyectos de la Fundación Costarricense de IA Responsable (<a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="text-[#1f6f8b] font-semibold hover:underline">FAIR</a>).
+       </p>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-2">
+      <!-- Sección 2: Experiencia Profesional -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-2" id="experiencia">
        <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -395,156 +173,631 @@
        </div>
        <div class="space-y-6">
         <div class="relative pl-8 border-l-2 border-[#0f2a43]/20">
+         <div class="timeline-dot absolute -left-[9px] top-1 w-4 h-4 rounded-full" style="background: linear-gradient(135deg, #d9a441, #1f6f8b);"></div>
+         <div class="flex flex-wrap items-center gap-2 mb-1">
+          <span class="pill px-3 py-1 rounded-full" style="background: linear-gradient(135deg, #0f2a43, #d9a441);">Mediados 2025 - Actual</span>
+          <a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-[#1f6f8b] hover:underline flex items-center gap-1">FAIR <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+         </div>
+         <h3 class="font-semibold text-gray-800">Director de Investigación y Director de Proyectos</h3>
+         <p class="text-sm text-gray-600">Fundación Costarricense de IA Responsable (FAIR) &middot; <a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="text-[#1f6f8b] hover:underline font-mono text-xs">https://www.fair.cr/</a></p>
+        </div>
+        <div class="relative pl-8 border-l-2 border-[#0f2a43]/20">
          <div class="timeline-dot absolute -left-[9px] top-1 w-4 h-4 rounded-full"></div>
-         <div class="flex flex-wrap items-center gap-2 mb-2"><span class="pill px-3 py-1 rounded-full">2005 - Actual</span><span class="text-xs text-gray-500">UCR</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Coordinador de Proyectos</h3>
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill px-3 py-1 rounded-full">2005 - Actual</span><span class="text-xs font-semibold text-gray-500">UCR</span></div>
+         <h3 class="font-semibold text-gray-800">Coordinador de Proyectos de Investigación</h3>
          <p class="text-sm text-gray-600">Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica</p>
         </div>
         <div class="relative pl-8 border-l-2 border-[#0f2a43]/20">
          <div class="timeline-dot absolute -left-[9px] top-1 w-4 h-4 rounded-full"></div>
-         <div class="flex flex-wrap items-center gap-2 mb-2"><span class="pill uned px-3 py-1 rounded-full">2023 - Actual</span><span class="text-xs text-gray-500">UNED</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Líder de Equipo de IA en Transformación Digital</h3>
-         <p class="text-sm text-gray-600">Universidad Estatal a Distancia - Transformación Digital</p>
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill uned px-3 py-1 rounded-full">2023 - Actual</span><span class="text-xs font-semibold text-gray-500">UNED</span></div>
+         <h3 class="font-semibold text-gray-800">Líder del Equipo de IA en Transformación Digital</h3>
+         <p class="text-sm text-gray-600">Universidad Estatal a Distancia &middot; Dirección de Transformación Digital</p>
         </div>
         <div class="relative pl-8 border-l-2 border-[#0f2a43]/20">
          <div class="timeline-dot absolute -left-[9px] top-1 w-4 h-4 rounded-full"></div>
-         <div class="flex flex-wrap items-center gap-2 mb-2"><span class="pill uned px-3 py-1 rounded-full">2014 - Actual</span><span class="text-xs text-gray-500">UNED</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Líder del Equipo de OMiPYMEs</h3>
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill uned px-3 py-1 rounded-full">2014 - Actual</span><span class="text-xs font-semibold text-gray-500">UNED</span></div>
+         <h3 class="font-semibold text-gray-800">Líder del Equipo de OMiPYMEs</h3>
          <p class="text-sm text-gray-600">Observatorio de la Micro, Pequeña y Mediana Empresa (OMiPYMEs), UNED</p>
         </div>
         <div class="relative pl-8 border-l-2 border-[#0f2a43]/20">
          <div class="timeline-dot absolute -left-[9px] top-1 w-4 h-4 rounded-full"></div>
-         <div class="flex flex-wrap items-center gap-2 mb-2"><span class="pill px-3 py-1 rounded-full">2017 - 2021</span><span class="text-xs text-gray-500">UCR</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Coordinador TCU-677</h3>
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill px-3 py-1 rounded-full">2017 - 2021</span><span class="text-xs font-semibold text-gray-500">UCR</span></div>
+         <h3 class="font-semibold text-gray-800">Coordinador TCU-677</h3>
          <p class="text-sm text-gray-600">Trabajo Comunal Universitario - Centro de Investigación Observatorio del Desarrollo (CIOdD)</p>
         </div>
         <div class="relative pl-8">
          <div class="timeline-dot absolute -left-[9px] top-1 w-4 h-4 rounded-full"></div>
-         <div class="flex flex-wrap items-center gap-2 mb-2"><span class="pill px-3 py-1 rounded-full">2019</span><span class="text-xs text-gray-500">UNA</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Investigador PROCAME</h3>
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill px-3 py-1 rounded-full">2019</span><span class="text-xs font-semibold text-gray-500">UNA</span></div>
+         <h3 class="font-semibold text-gray-800">Investigador PROCAME</h3>
          <p class="text-sm text-gray-600">Programa de Estudios en Calidad, Ambiente y Metrología - Universidad Nacional</p>
         </div>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-3">
-       <div class="flex items-center gap-3 mb-5">
+      <!-- Sección 3: Informes Técnicos con Visor de Ancho Completo (Sin cortes laterales) -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-3" id="informes">
+       <div class="flex items-center gap-3 mb-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#d9a441] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
         </div>
-        <h2 class="section-title text-xl font-bold">Informes Técnicos</h2>
-        <span class="badge ml-auto">15 informes</span>
+        <div>
+         <h2 class="section-title text-xl font-bold">Informes Técnicos</h2>
+         <p class="text-xs text-gray-500">Centro de Investigación Observatorio del Desarrollo (CIOdD-UCR)</p>
+        </div>
+        <span class="badge ml-auto">Todos en PDF</span>
        </div>
-       <p class="text-sm text-gray-600 mb-4">Seleccione un informe de la lista para previsualizarlo. Puede descargarlo o abrirlo en una ventana nueva.</p>
-       <div class="pdf-viewer-section">
-        <div class="pdf-list-panel" id="pdfListPanel">
-         <div class="pdf-list-item active" data-pdf="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" data-title="Estimación Probabilística de Conflicto Global">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Estimación Probabilística de Conflicto Global</span>
+       <p class="text-sm text-gray-600 mb-4">Visualice cualquier informe técnico a ancho completo sin recortes, expándalo en pantalla completa o descárguelo en formato PDF.</p>
+
+       <!-- NUEVO VISOR DE ANCHO COMPLETO -->
+       <div class="pdf-viewer-container mb-6">
+        <!-- Barra de Controles Superior -->
+        <div class="pdf-viewer-toolbar">
+         <div class="w-full sm:flex-1">
+          <label for="pdfSelectDropdown" class="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Seleccionar Informe para previsualizar:</label>
+          <select id="pdfSelectDropdown" class="pdf-select-dropdown" aria-label="Seleccionar informe técnico para previsualizar">
+           <optgroup label="Coyuntura, Seguridad y Tendencias 2026">
+            <option value="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" data-title="Estimación Probabilística de Conflicto Global (CIOdD)" selected>Estimación Probabilística de Conflicto Global</option>
+            <option value="informes/Estado_del_Arte_Estafas_PAM_UCR_2026_CIOdD.pdf" data-title="Estado del Arte: Estafas PAM UCR 2026">Estado del Arte: Estafas PAM UCR 2026</option>
+            <option value="informes/Informe_integrado_tendencias_Costa_Rica_2025_2026_v2.pdf" data-title="Informe Integrado de Tendencias Costa Rica 2025-2026">Informe Integrado de Tendencias CR 2025-2026</option>
+            <option value="informes/Informe_Seguridad_Ciudadana_Crimen_Organizado_CR_CIOdD.pdf" data-title="Seguridad Ciudadana y Crimen Organizado CR">Seguridad Ciudadana y Crimen Organizado</option>
+            <option value="informes/Informe_tecnico_evolucion_corrupcion_narcotrafico_Costa_Rica_1980-2026_CIOdD_FINAL%202.pdf" data-title="Corrupción y Narcotráfico en Costa Rica 1980-2026">Evolución Corrupción y Narcotráfico 1980-2026</option>
+            <option value="informes/Informe_integrado_corrupcion_crimen_organizado_CR_1980_2026.pdf" data-title="Informe Integrado Corrupción y Crimen Organizado CR">Informe Integrado Corrupción y Crimen Organizado</option>
+           </optgroup>
+           <optgroup label="Salud Pública y Epidemiología">
+            <option value="informes/Boletin_CIOdD_Tendencias_Epidemiologicas_2025_2026_CIOdD.pdf" data-title="Boletín CIOdD: Tendencias Epidemiológicas 2025-2026">Tendencias Epidemiológicas 2025-2026</option>
+            <option value="informes/Informe_epidemiologico_enfermedades_respiratorias_Costa_Rica_2019_2026_CIOdD.pdf" data-title="Informe Epidemiológico: Enfermedades Respiratorias CR 2019-2026">Enfermedades Respiratorias CR 2019-2026</option>
+            <option value="informes/Informe_breve_vectores_IRA_Costa_Rica_SE25_34_2026.pdf" data-title="Informe Breve: Vectores IRA Costa Rica SE25-34">Vectores IRA Costa Rica SE25-34</option>
+           </optgroup>
+           <optgroup label="Transporte, Movilidad y Datos Waze">
+            <option value="informes/Informe_tecnico_congestion_infraestructura_Waze_CR_2019_2026_mejorado_CIOdD.pdf" data-title="Congestión e Infraestructura Waze CR 2019-2026">Congestión e Infraestructura Waze 2019-2026</option>
+            <option value="informes/INFORME_DESCRIPTIVO_EVOLUCION_MOVILIDAD_SEGURA_PND_1990_2030.pdf" data-title="Evolución Movilidad Segura PND 1990-2030">Evolución Movilidad Segura PND 1990-2030</option>
+            <option value="informes/Informe_Tecnico_Integral_Movilidad_Segura_CR.pdf" data-title="Informe Técnico Integral Movilidad Segura CR">Informe Técnico Integral Movilidad Segura CR</option>
+            <option value="informes/Informe_Transporte_Congestionamiento_Vial_CR_CIOdD.pdf" data-title="Transporte y Congestionamiento Vial CR">Transporte y Congestionamiento Vial CR</option>
+           </optgroup>
+           <optgroup label="Economía, Empleo, Pymes y Desarrollo">
+            <option value="informes/Informe_final_investigacion_GEM_Costa_Rica_2014_2025.pdf" data-title="Investigación GEM Costa Rica 2014-2025">Investigación GEM Costa Rica 2014-2025 (Pymes)</option>
+            <option value="informes/Informe_Parque_Empresarial_Formal_Informal_CR_CIOdD.pdf" data-title="Parque Empresarial Formal e Informal CR">Parque Empresarial Formal e Informal CR</option>
+            <option value="informes/Policy_Brief_Grupos_Edad_Mercado_Laboral_Costa_Rica_2025_2026_CIOdD.pdf" data-title="Grupos de Edad y Mercado Laboral CR 2025-2026">Grupos de Edad y Mercado Laboral CR</option>
+            <option value="informes/Informe_tecnico_evolucion_macroeconomica_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución Macroeconómica Costa Rica 1994-2025">Evolución Macroeconómica CR 1994-2025</option>
+            <option value="informes/Articulo_IDH_Cantonal_Heterogeneidad_Territorial.pdf" data-title="IDH Cantonal y Heterogeneidad Territorial">IDH Cantonal y Heterogeneidad Territorial</option>
+            <option value="informes/Informe_Tecnico_Unificado_Cantonal.pdf" data-title="Informe Técnico Unificado Cantonal">Informe Técnico Unificado Cantonal</option>
+            <option value="informes/Informe_Seguimiento_Ejecucion_Presupuestaria_2024-2025_CIOdD.pdf" data-title="Seguimiento Ejecución Presupuestaria 2024-2025">Seguimiento Ejecución Presupuestaria 2024-2025</option>
+           </optgroup>
+           <optgroup label="Demografía, Educación, Ambiente y Sociedad">
+            <option value="informes/Informe_Biodiversidad_Medio_Ambiente_CR_CIOdD.pdf" data-title="Biodiversidad y Medio Ambiente CR">Biodiversidad y Medio Ambiente CR</option>
+            <option value="informes/Informe_tecnico_evolucion_demografica_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución Demográfica Costa Rica 1994-2025">Evolución Demográfica CR 1994-2025</option>
+            <option value="informes/Informe_tecnico_evolucion_educacion_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución de la Educación Costa Rica 1994-2025">Evolución de la Educación CR 1994-2025</option>
+            <option value="informes/Informe_tecnico_evolucion_ciencia_tecnologia_Costa_Rica_1994-2026_CIOdD.pdf" data-title="Evolución Ciencia y Tecnología Costa Rica 1994-2026">Evolución Ciencia y Tecnología CR 1994-2026</option>
+            <option value="informes/Informe_tecnico_evolucion_agricultura_sector_agropecuario_Costa_Rica_1994-2026_CIOdD.pdf" data-title="Evolución Agricultura y Sector Agropecuario CR 1994-2026">Evolución Agricultura y Agropecuario CR</option>
+            <option value="informes/Sistema_Judicial_CR_2015-2025_Informe_de_Seguimiento.pdf" data-title="Sistema Judicial CR 2015-2025 Seguimiento">Sistema Judicial CR 2015-2025</option>
+            <option value="informes/12_Informe_Continuidad_Disrupcion_PND_CR.pdf" data-title="Continuidad y Disrupción PND CR">Continuidad y Disrupción PND CR</option>
+           </optgroup>
+          </select>
          </div>
-         <div class="pdf-list-item" data-pdf="informes/Estado_del_Arte_Estafas_PAM_UCR_2026_CIOdD.pdf" data-title="Estado del Arte: Estafas PAM UCR 2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Estado del Arte: Estafas PAM UCR 2026</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Boletin_CIOdD_Tendencias_Epidemiologicas_2025_2026_CIOdD.pdf" data-title="Tendencias Epidemiológicas 2025-2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Tendencias Epidemiológicas 2025-2026</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_epidemiologico_enfermedades_respiratorias_Costa_Rica_2019_2026_CIOdD.pdf" data-title="Enfermedades Respiratorias CR 2019-2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Enfermedades Respiratorias CR 2019-2026</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_Biodiversidad_Medio_Ambiente_CR_CIOdD.pdf" data-title="Biodiversidad y Medio Ambiente CR">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Biodiversidad y Medio Ambiente CR</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_Seguridad_Ciudadana_Crimen_Organizado_CR_CIOdD.pdf" data-title="Seguridad Ciudadana y Crimen Organizado CR">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Seguridad Ciudadana y Crimen Organizado CR</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_Parque_Empresarial_Formal_Informal_CR_CIOdD.pdf" data-title="Parque Empresarial Formal e Informal CR">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Parque Empresarial Formal e Informal CR</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_Transporte_Congestionamiento_Vial_CR_CIOdD.pdf" data-title="Transporte y Congestionamiento Vial CR">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Transporte y Congestionamiento Vial CR</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_congestion_infraestructura_Waze_CR_2019_2026_mejorado_CIOdD.pdf" data-title="Congestión e Infraestructura Waze CR 2019-2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Congestión e Infraestructura Waze CR 2019-2026</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Policy_Brief_Grupos_Edad_Mercado_Laboral_Costa_Rica_2025_2026_CIOdD.pdf" data-title="Grupos de Edad y Mercado Laboral CR 2025-2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Grupos de Edad y Mercado Laboral CR 2025-2026</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_macroeconomica_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución Macroeconómica CR 1994-2025">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Evolución Macroeconómica CR 1994-2025</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_demografica_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución Demográfica CR 1994-2025">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Evolución Demográfica CR 1994-2025</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_educacion_Costa_Rica_1994-2025_CIOdD.pdf" data-title="Evolución de la Educación CR 1994-2025">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Evolución de la Educación CR 1994-2025</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_ciencia_tecnologia_Costa_Rica_1994-2026_CIOdD.pdf" data-title="Evolución Ciencia y Tecnología CR 1994-2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Evolución Ciencia y Tecnología CR 1994-2026</span>
-         </div>
-         <div class="pdf-list-item" data-pdf="informes/Informe_tecnico_evolucion_agricultura_sector_agropecuario_Costa_Rica_1994-2026_CIOdD.pdf" data-title="Evolución Agricultura y Sector Agropecuario CR 1994-2026">
-          <div class="pdf-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-          <span>Evolución Agricultura y Sector Agropecuario CR</span>
+
+         <!-- Botones de Acción -->
+         <div class="flex items-center gap-2 self-end sm:self-auto flex-shrink-0">
+          <button id="pdfModalBtn" class="pdf-action-btn primary-btn" title="Expandir a Pantalla Completa">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+           Pantalla Completa
+          </button>
+          <a id="pdfOpenBtn" href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" target="_blank" rel="noopener noreferrer" class="pdf-action-btn" title="Abrir en pestaña nueva">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Abrir
+          </a>
+          <a id="pdfDownloadBtn" href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" download class="pdf-action-btn" title="Descargar PDF">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+           Descargar
+          </a>
          </div>
         </div>
-        <div class="pdf-viewer-panel">
-         <div class="pdf-viewer-toolbar">
-          <span class="pdf-title-display" id="pdfTitleDisplay">Estimación Probabilística de Conflicto Global</span>
-          <div class="pdf-actions">
-           <a id="pdfOpenBtn" href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" target="_blank" class="pdf-action-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            Abrir
-           </a>
-           <a id="pdfDownloadBtn" href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" download class="pdf-action-btn primary-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Descargar
-           </a>
-          </div>
+
+        <!-- Iframe a Ancho Completo: Altura 650px, 100% de ancho sin cortes -->
+        <div class="pdf-frame-wrapper">
+         <iframe id="pdfViewerFrame" class="pdf-viewer-frame" src="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" title="Visor de Informe Técnico Completo"></iframe>
+        </div>
+       </div>
+
+       <!-- Catálogo Completo de Informes Técnicos -->
+       <div class="mt-8 pt-5 border-t border-gray-100">
+        <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-4 flex items-center justify-between">
+         <span class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f6f8b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          Catálogo Completo de Informes Técnicos y Reportes
+         </span>
+         <span class="text-xs font-mono text-gray-500 font-normal">29 informes en PDF</span>
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+         <!-- Informes CIOdD -->
+         <div class="doc-compact searchable-item" data-category="seguridad conflicto internacional" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Estimación Probabilística de Conflicto Global</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" data-title="Estimación Probabilística de Conflicto Global">Ver PDF</button>
+          <a href="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
          </div>
-         <iframe id="pdfViewerFrame" class="pdf-viewer-frame" src="informes/Estimacion_Probabilistica_Conflicto_Global_CIOdD.pdf"></iframe>
+
+         <div class="doc-compact searchable-item" data-category="seguridad pam estafas" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Estado del Arte: Estafas PAM UCR 2026</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Estado_del_Arte_Estafas_PAM_UCR_2026_CIOdD.pdf" data-title="Estado del Arte: Estafas PAM UCR 2026">Ver PDF</button>
+          <a href="informes/Estado_del_Arte_Estafas_PAM_UCR_2026_CIOdD.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="salud epidemiologia" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Tendencias Epidemiológicas 2025-2026</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Boletin_CIOdD_Tendencias_Epidemiologicas_2025_2026_CIOdD.pdf" data-title="Tendencias Epidemiológicas 2025-2026">Ver PDF</button>
+          <a href="informes/Boletin_CIOdD_Tendencias_Epidemiologicas_2025_2026_CIOdD.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="salud epidemiologia" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Enfermedades Respiratorias CR 2019-2026</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_epidemiologico_enfermedades_respiratorias_Costa_Rica_2019_2026_CIOdD.pdf" data-title="Enfermedades Respiratorias CR 2019-2026">Ver PDF</button>
+          <a href="informes/Informe_epidemiologico_enfermedades_respiratorias_Costa_Rica_2019_2026_CIOdD.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="salud epidemiologia vectores" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Vectores IRA Costa Rica SE25-34</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_breve_vectores_IRA_Costa_Rica_SE25_34_2026.pdf" data-title="Vectores IRA Costa Rica SE25-34">Ver PDF</button>
+          <a href="informes/Informe_breve_vectores_IRA_Costa_Rica_SE25_34_2026.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="coyuntura tendencias nacional" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Informe Integrado Tendencias CR 2025-2026</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_integrado_tendencias_Costa_Rica_2025_2026_v2.pdf" data-title="Informe Integrado Tendencias Costa Rica 2025-2026">Ver PDF</button>
+          <a href="informes/Informe_integrado_tendencias_Costa_Rica_2025_2026_v2.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="movilidad transporte waze" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Congestión e Infraestructura Waze 2019-2026</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_tecnico_congestion_infraestructura_Waze_CR_2019_2026_mejorado_CIOdD.pdf" data-title="Congestión e Infraestructura Waze CR 2019-2026">Ver PDF</button>
+          <a href="informes/Informe_tecnico_congestion_infraestructura_Waze_CR_2019_2026_mejorado_CIOdD.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="movilidad transporte pnd" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Movilidad Segura PND 1990-2030</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/INFORME_DESCRIPTIVO_EVOLUCION_MOVILIDAD_SEGURA_PND_1990_2030.pdf" data-title="Evolución Movilidad Segura PND 1990-2030">Ver PDF</button>
+          <a href="informes/INFORME_DESCRIPTIVO_EVOLUCION_MOVILIDAD_SEGURA_PND_1990_2030.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <!-- Reportes especializados convertidos a PDF -->
+         <div class="doc-compact searchable-item" data-category="economia pymes emprendimiento gem" data-institution="uned ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Investigación GEM Costa Rica 2014-2025</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_final_investigacion_GEM_Costa_Rica_2014_2025.pdf" data-title="Investigación GEM Costa Rica 2014-2025">Ver PDF</button>
+          <a href="informes/Informe_final_investigacion_GEM_Costa_Rica_2014_2025.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="movilidad transporte seguridad integral" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Informe Integral Movilidad Segura CR</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_Tecnico_Integral_Movilidad_Segura_CR.pdf" data-title="Informe Técnico Integral Movilidad Segura CR">Ver PDF</button>
+          <a href="informes/Informe_Tecnico_Integral_Movilidad_Segura_CR.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="seguridad corrupcion narcotrafico" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Corrupción y Narcotráfico en CR 1980-2026</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_tecnico_evolucion_corrupcion_narcotrafico_Costa_Rica_1980-2026_CIOdD_FINAL%202.pdf" data-title="Corrupción y Narcotráfico en Costa Rica 1980-2026">Ver PDF</button>
+          <a href="informes/Informe_tecnico_evolucion_corrupcion_narcotrafico_Costa_Rica_1980-2026_CIOdD_FINAL%202.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="politicas justicia estado" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Sistema Judicial CR 2015-2025</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Sistema_Judicial_CR_2015-2025_Informe_de_Seguimiento.pdf" data-title="Sistema Judicial CR 2015-2025">Ver PDF</button>
+          <a href="informes/Sistema_Judicial_CR_2015-2025_Informe_de_Seguimiento.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="economia desarrollo cantonal idh" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">IDH Cantonal &amp; Heterogeneidad Territorial</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Articulo_IDH_Cantonal_Heterogeneidad_Territorial.pdf" data-title="IDH Cantonal y Heterogeneidad Territorial">Ver PDF</button>
+          <a href="informes/Articulo_IDH_Cantonal_Heterogeneidad_Territorial.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="economia finanzas publicas presupuesto" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Ejecución Presupuestaria 2024-2025</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_Seguimiento_Ejecucion_Presupuestaria_2024-2025_CIOdD.pdf" data-title="Seguimiento Ejecución Presupuestaria 2024-2025">Ver PDF</button>
+          <a href="informes/Informe_Seguimiento_Ejecucion_Presupuestaria_2024-2025_CIOdD.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="economia desarrollo cantonal unificado" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Informe Técnico Unificado Cantonal</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/Informe_Tecnico_Unificado_Cantonal.pdf" data-title="Informe Técnico Unificado Cantonal">Ver PDF</button>
+          <a href="informes/Informe_Tecnico_Unificado_Cantonal.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
+
+         <div class="doc-compact searchable-item" data-category="politicas pnd continuidad" data-institution="ucr">
+          <span class="doc-tag pdf flex-shrink-0">PDF</span>
+          <span class="text-xs text-gray-800 flex-1 truncate font-medium">Continuidad y Disrupción PND CR</span>
+          <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="informes/12_Informe_Continuidad_Disrupcion_PND_CR.pdf" data-title="Continuidad y Disrupción PND CR">Ver PDF</button>
+          <a href="informes/12_Informe_Continuidad_Disrupcion_PND_CR.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+         </div>
         </div>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-4">
-       <div class="flex items-center gap-3 mb-6">
+      <!-- Sección 4: Investigaciones y Publicaciones Académicas (13 Artículos) -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-4" id="articulos">
+       <div class="flex items-center gap-3 mb-4">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
         </div>
-        <h2 class="section-title text-xl font-bold">Investigaciones y Publicaciones</h2>
-        <span class="badge ml-auto">13 documentos</span>
+        <div>
+         <h2 class="section-title text-xl font-bold">Investigaciones y Publicaciones Académicas</h2>
+         <p class="text-xs text-gray-500">Artículos científicos y metodológicos UCR y UNED</p>
+        </div>
+        <span class="badge ml-auto">13 artículos PDF</span>
        </div>
-       <p class="text-sm text-gray-600 mb-4">Artículos en proceso de publicación desarrollados en el CIOdD-UCR y en OMiPYMEs-UNED.</p>
-       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        <a href="Articulos/CIOdD_UCR_Articulo_sondeo_2025.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Sondeo 2025</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-<a href="Articulos/CIOdD_UCR_articulo_idh_pib_v2.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">IDH y PIB</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Impacto Accidentes en Carretera 2025.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Impacto Accidentes en Carretera 2025</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/Articulo Accidentes Anonimizado.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Accidentes (Anonimizado)</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Hacia una economia azul.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Hacia una Economía Azul</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Indice de Desempeño Ambiental.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Índice de Desempeño Ambiental</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Artículo zonas Azules 17_02_2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Zonas Azules</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Artículo de Inseguridad_Alimentaria  17_02_2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Inseguridad Alimentaria</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Simulación Montecarlo Elecciones presidenciales 2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Simulación Montecarlo &mdash; Elecciones 2026</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Articulo_simulacion_cognitiva_CR_2026.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Simulación Cognitiva CR 2026</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/CIOdD_UCR_Fine-Tunning Llama 3.2 -1B- in HPC-UCR.pdf" download class="doc-compact"><span class="doc-tag ucr" style="flex-shrink:0">UCR</span><span class="text-sm text-gray-800 flex-1">Fine-Tuning Llama 3.2 (1B) en HPC-UCR</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/OMIPYMES_UNED_Articulo_GUESS_2023.pdf" download class="doc-compact"><span class="doc-tag uned" style="flex-shrink:0">UNED</span><span class="text-sm text-gray-800 flex-1">GUESS 2023</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
-        <a href="Articulos/OMIPYMES_UNED_Articulo_Guess_2021.pdf" download class="doc-compact"><span class="doc-tag uned" style="flex-shrink:0">UNED</span><span class="text-sm text-gray-800 flex-1">GUESS 2021</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2" class="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+       <p class="text-sm text-gray-600 mb-4">Publicaciones científicas en modelado estadístico, simulaciones probabilísticas, fine-tuning de modelos LLM, dinámica empresarial y economía sostenible.</p>
+       
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <div class="doc-compact searchable-item" data-category="ia hpc modelos llm" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Fine-Tuning Llama 3.2 (1B) en HPC-UCR</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Fine-Tunning%20Llama%203.2%20-1B-%20in%20HPC-UCR.pdf" data-title="Fine-Tuning Llama 3.2 (1B) en HPC-UCR">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Fine-Tunning%20Llama%203.2%20-1B-%20in%20HPC-UCR.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="estadistica montecarlo elecciones" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Simulación Montecarlo &mdash; Elecciones 2026</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Simulacio%CC%81n%20Montecarlo%20Elecciones%20presidenciales%202026.pdf" data-title="Simulación Montecarlo - Elecciones 2026">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Simulacio%CC%81n%20Montecarlo%20Elecciones%20presidenciales%202026.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="ia cognicion simulacion" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Simulación Cognitiva CR 2026</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Articulo_simulacion_cognitiva_CR_2026.pdf" data-title="Simulación Cognitiva CR 2026">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Articulo_simulacion_cognitiva_CR_2026.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="estadistica sondeo opinion" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Sondeo de Opinión 2025</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Articulo_sondeo_2025.pdf" data-title="Sondeo de Opinión 2025">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Articulo_sondeo_2025.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="economia idh pib desarrollo" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Relación IDH y PIB en Costa Rica</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_articulo_idh_pib_v2.pdf" data-title="Relación IDH y PIB en Costa Rica">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_articulo_idh_pib_v2.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="movilidad transporte accidentes" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Impacto Accidentes en Carretera 2025</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Impacto%20Accidentes%20en%20Carretera%202025.pdf" data-title="Impacto Accidentes en Carretera 2025">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Impacto%20Accidentes%20en%20Carretera%202025.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="movilidad transporte accidentes" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Accidentes Viales (Estudio Anonimizado)</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/Articulo%20Accidentes%20Anonimizado.pdf" data-title="Accidentes Viales Anonimizado">Ver PDF</button>
+         <a href="Articulos/Articulo%20Accidentes%20Anonimizado.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="economia ambiente oceanos" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Hacia una Economía Azul Sostenible</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Hacia%20una%20economia%20azul.pdf" data-title="Hacia una Economía Azul Sostenible">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Hacia%20una%20economia%20azul.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="ambiente ods sostenibilidad" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Índice de Desempeño Ambiental</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Indice%20de%20Desempen%CC%83o%20Ambiental.pdf" data-title="Índice de Desempeño Ambiental">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Indice%20de%20Desempen%CC%83o%20Ambiental.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="salud demografia zonas azules" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Zonas Azules y Longevidad (2026)</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Arti%CC%81culo%20zonas%20Azules%2017_02_2026.pdf" data-title="Zonas Azules y Longevidad">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Arti%CC%81culo%20zonas%20Azules%2017_02_2026.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="salud nutricion ods" data-institution="ucr">
+         <span class="doc-tag ucr flex-shrink-0">UCR</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Inseguridad Alimentaria en Costa Rica</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/CIOdD_UCR_Arti%CC%81culo%20de%20Inseguridad_Alimentaria%20%2017_02_2026.pdf" data-title="Inseguridad Alimentaria en Costa Rica">Ver PDF</button>
+         <a href="Articulos/CIOdD_UCR_Arti%CC%81culo%20de%20Inseguridad_Alimentaria%20%2017_02_2026.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="economia pymes emprendimiento guess" data-institution="uned">
+         <span class="doc-tag uned flex-shrink-0">UNED</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Espíritu Emprendedor Universitario GUESS 2023</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/OMIPYMES_UNED_Articulo_GUESS_2023.pdf" data-title="Espíritu Emprendedor GUESS 2023">Ver PDF</button>
+         <a href="Articulos/OMIPYMES_UNED_Articulo_GUESS_2023.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="economia pymes emprendimiento guess" data-institution="uned">
+         <span class="doc-tag uned flex-shrink-0">UNED</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Espíritu Emprendedor Universitario GUESS 2021</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="Articulos/OMIPYMES_UNED_Articulo_Guess_2021.pdf" data-title="Espíritu Emprendedor GUESS 2021">Ver PDF</button>
+         <a href="Articulos/OMIPYMES_UNED_Articulo_Guess_2021.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-4">
+      <!-- Sección 5: Artículos de Opinión & Prensa (13 Artículos en PDF) -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-4" id="opinion">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#d9a441] to-[#0f2a43] flex items-center justify-center">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1"></path><path d="M19 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-5"></path><path d="M7 10h6"></path><path d="M7 14h6"></path><path d="M7 18h2"></path></svg>
+        </div>
+        <div>
+         <h2 class="section-title text-xl font-bold">Artículos de Opinión &amp; Prensa</h2>
+         <p class="text-xs text-gray-500">Columnas publicadas en el diario La Nación y medios de difusión</p>
+        </div>
+        <span class="badge ml-auto">13 columnas PDF</span>
+       </div>
+       <p class="text-sm text-gray-600 mb-4">Análisis crítico de coyuntura nacional sobre epidemiología, inteligencia artificial, educación, empleo y gobernanza de datos.</p>
+
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <div class="doc-compact searchable-item" data-category="opinion salud epidemiologia" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Costa Rica no utiliza la inteligencia epidemiológica</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Costa%20Rica%20no%20utiliza%20la%20inteligencia%20epidemiolo%CC%81gica%20_%20La%20Nacio%CC%81n.pdf" data-title="Costa Rica no utiliza la inteligencia epidemiológica">Ver PDF</button>
+         <a href="ArticulosOpinion/Costa%20Rica%20no%20utiliza%20la%20inteligencia%20epidemiolo%CC%81gica%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion ia educacion chatgpt" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Del apagón educativo al ChatGPT</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Del%20apago%CC%81n%20educativo%20al%20ChatGPT%20_%20La%20Nacio%CC%81n.pdf" data-title="Del apagón educativo al ChatGPT">Ver PDF</button>
+         <a href="ArticulosOpinion/Del%20apago%CC%81n%20educativo%20al%20ChatGPT%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion datos gobernanza politicas" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Datos desaprovechados en la gestión pública</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Datos%20desaprovechados%20_%20La%20Nacio%CC%81n.pdf" data-title="Datos desaprovechados">Ver PDF</button>
+         <a href="ArticulosOpinion/Datos%20desaprovechados%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion educacion matematicas sociedad" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Cultura matemática para el ejercicio de la libertad</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Cultura%20matema%CC%81tica%20para%20el%20ejercicio%20de%20la%20libertad%20_%20La%20Nacio%CC%81n.pdf" data-title="Cultura matemática para la libertad">Ver PDF</button>
+         <a href="ArticulosOpinion/Cultura%20matema%CC%81tica%20para%20el%20ejercicio%20de%20la%20libertad%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion salud hospital niños" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Cómo prevenir la saturación del Hospital de Niños</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Co%CC%81mo%20prevenir%20la%20saturacio%CC%81n%20del%20Hospital%20de%20Nin%CC%83os%20_%20La%20Nacio%CC%81n.pdf" data-title="Saturación del Hospital de Niños">Ver PDF</button>
+         <a href="ArticulosOpinion/Co%CC%81mo%20prevenir%20la%20saturacio%CC%81n%20del%20Hospital%20de%20Nin%CC%83os%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion empleo trabajo habilidades" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Empleo exige habilidades y cambios modernos</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Empleo%20exige%20habilidades%20y%20cambios%20en%20el%20trabajo%20moderno%20_%20La%20Nacio%CC%81n.pdf" data-title="Empleo exige habilidades y cambios">Ver PDF</button>
+         <a href="ArticulosOpinion/Empleo%20exige%20habilidades%20y%20cambios%20en%20el%20trabajo%20moderno%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion inec estadistica institucional" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Más respeto para el INEC</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Ma%CC%81s%20respeto%20para%20el%20INEC%20_%20La%20Nacio%CC%81n.pdf" data-title="Más respeto para el INEC">Ver PDF</button>
+         <a href="ArticulosOpinion/Ma%CC%81s%20respeto%20para%20el%20INEC%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion filosofia ciencia sociedad" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">La barbarie del especialismo</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/La%20barbarie%20del%20especialismo%20_%20La%20Nacio%CC%81n.pdf" data-title="La barbarie del especialismo">Ver PDF</button>
+         <a href="ArticulosOpinion/La%20barbarie%20del%20especialismo%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion educacion mep politicas" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Mi tesis sobre el problema educativo</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Mi%20tesis%20sobre%20el%20problema%20educativo%20_%20La%20Nacio%CC%81n.pdf" data-title="El problema educativo">Ver PDF</button>
+         <a href="ArticulosOpinion/Mi%20tesis%20sobre%20el%20problema%20educativo%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion ambiente costas oceanos" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Buena gestión de costas y océanos</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Por%20que%CC%81%20una%20buena%20gestio%CC%81n%20de%20las%20costas%20y%20los%20oce%CC%81anos%20importa%20_%20La%20Nacio%CC%81n.pdf" data-title="Gestión de costas y océanos">Ver PDF</button>
+         <a href="ArticulosOpinion/Por%20que%CC%81%20una%20buena%20gestio%CC%81n%20de%20las%20costas%20y%20los%20oce%CC%81anos%20importa%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion salud covid pandemia" data-institution="prensa">
+         <span class="doc-tag opinion flex-shrink-0">La Nación</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Una normalización más: la covid-19</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Una%20normalizacio%CC%81n%20ma%CC%81s_%20la%20covid-19%20_%20La%20Nacio%CC%81n.pdf" data-title="La covid-19">Ver PDF</button>
+         <a href="ArticulosOpinion/Una%20normalizacio%CC%81n%20ma%CC%81s_%20la%20covid-19%20_%20La%20Nacio%CC%81n.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <!-- Ensayos convertidos a PDF -->
+        <div class="doc-compact searchable-item" data-category="opinion politica discurso analisis" data-institution="opinion">
+         <span class="doc-tag pdf flex-shrink-0">PDF</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Análisis del discurso de Rodrigo Chaves</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/El%20discurso%20populista%20del%20Presidente%20Rodrigo%20Chaves.pdf" data-title="Discurso Presidente Rodrigo Chaves">Ver PDF</button>
+         <a href="ArticulosOpinion/El%20discurso%20populista%20del%20Presidente%20Rodrigo%20Chaves.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+
+        <div class="doc-compact searchable-item" data-category="opinion geopolitica energia ormuz" data-institution="opinion">
+         <span class="doc-tag pdf flex-shrink-0">PDF</span>
+         <span class="text-xs text-gray-800 flex-1 truncate font-medium">Ormuz, el Pacto de La Meca y lecciones para CR</span>
+         <button class="view-pdf-modal-btn text-xs text-[#1f6f8b] hover:text-[#0f2a43] font-semibold px-2 py-1 rounded bg-[#1f6f8b]/10" data-pdf="ArticulosOpinion/Ormuz%2C%20el%20Pacto%20de%20La%20Meca%20y%20las%20lecciones%20para%20Costa%20Rica.pdf" data-title="Ormuz y lecciones para Costa Rica">Ver PDF</button>
+         <a href="ArticulosOpinion/Ormuz%2C%20el%20Pacto%20de%20La%20Meca%20y%20las%20lecciones%20para%20Costa%20Rica.pdf" download class="text-gray-500 hover:text-gray-800 p-1" title="Descargar PDF"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+        </div>
+       </div>
+      </section>
+
+      <!-- Sección 6: Voz Experta & Artículos Especializados (Orden Cronológico) -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-5" id="voz-experta">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1f6f8b] to-[#2f9e7a] flex items-center justify-center">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </div>
+        <div>
+         <h2 class="section-title text-xl font-bold">Voz Experta &amp; Publicaciones Especializadas</h2>
+         <p class="text-xs text-gray-500">Columnas en Portal UCR y Semanario Universidad (Orden Cronológico)</p>
+        </div>
+        <span class="badge ml-auto">Voz Experta UCR</span>
+       </div>
+       <p class="text-sm text-gray-600 mb-5">Artículos de análisis y opinión técnica sobre inteligencia artificial, epidemiología, conectividad y prospectiva estratégica publicados en medios universitarios.</p>
+
+       <div class="space-y-4">
+
+        <!-- 2026: Riesgo existencial o estrategia de capitalización -->
+        <div class="soft-panel searchable-item" data-category="ia riesgo existencial capitalizacion bolsa ipo tecnologia" data-institution="ucr">
+         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">Portal UCR &middot; Voz Experta</span>
+           <span class="text-xs font-semibold font-mono text-[#0f2a43] bg-[#0f2a43]/5 px-2.5 py-0.5 rounded-full">22 Sep 2026</span>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Inteligencia Artificial</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-sm sm:text-base mb-1.5">
+          Voz experta: ¿Riesgo existencial o estrategia de capitalización? La IA entre el fin del mundo y la salida a la bolsa
+         </h3>
+         <p class="text-xs sm:text-sm text-gray-600 mb-3 leading-relaxed">
+          Análisis crítico sobre la narrativa del riesgo existencial promovida por corporaciones tecnológicas, contrastándola con las estrategias financieras de valoración previa a las ofertas públicas de venta (IPO) y la necesidad de gobernanza algorítmica.
+         </p>
+         <div class="flex flex-wrap items-center gap-2.5 pt-1">
+          <a href="https://www.ucr.ac.cr/noticias/2026/9/22/voz-experta-riesgo-existencial-o-estrategia-de-capitalizacion-la-ia-entre-el-fin-del-mundo-y-la-salida-a-la-bolsa.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-[#1f6f8b] hover:bg-[#0f2a43] text-white px-3.5 py-1.5 rounded-full transition-colors shadow-sm" title="Leer en Portal UCR">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Leer en Portal UCR
+          </a>
+          <button class="view-pdf-modal-btn inline-flex items-center gap-1.5 text-xs font-semibold text-[#1f6f8b] hover:text-[#0f2a43] px-3 py-1.5 rounded-full bg-[#1f6f8b]/10 transition-colors" data-pdf="Vozexperta/voz-experta-ia-riesgo-vs-ipo_ver5_0.pdf" data-title="IA: ¿Riesgo existencial o estrategia de capitalización?">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+           Ver Documento PDF
+          </button>
+          <a href="Vozexperta/voz-experta-ia-riesgo-vs-ipo_ver5_0.pdf" download class="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-800 p-1">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+           Descargar PDF
+          </a>
+         </div>
+        </div>
+
+        <!-- 2025: De la conectividad pionera al liderazgo en IA: la UCR ante su desafío centenario -->
+        <div class="soft-panel searchable-item" data-category="ia conectividad historia ucr centenario liderazgo tecnologia" data-institution="ucr">
+         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; Noticias &amp; Semanario</span>
+           <span class="text-xs font-semibold font-mono text-[#0f2a43] bg-[#0f2a43]/5 px-2.5 py-0.5 rounded-full">14 Ago 2025</span>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Historia &middot; IA &middot; Centenario</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-sm sm:text-base mb-1.5">
+          De la conectividad pionera al liderazgo en IA: la UCR ante su desafío centenario
+         </h3>
+         <p class="text-xs sm:text-sm text-gray-600 mb-3 leading-relaxed">
+          Recorrido histórico y visión de futuro sobre cómo la Universidad de Costa Rica lideró la primera conexión a Internet en la región y el desafío actual de consolidar el liderazgo en inteligencia artificial ética y aplicada para el desarrollo nacional.
+         </p>
+         <div class="flex flex-wrap items-center gap-2.5 pt-1">
+          <a href="https://www.ucr.ac.cr/noticias/2025/8/14/de-la-conectividad-pionera-al-liderazgo-en-ia-la-ucr-ante-su-desafio-centenario.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-[#1f6f8b] hover:bg-[#0f2a43] text-white px-3.5 py-1.5 rounded-full transition-colors shadow-sm" title="Leer en Portal Noticias UCR">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Leer en Portal UCR
+          </a>
+          <a href="https://semanariouniversidad.com/opinion/de-la-conectividad-pionera-al-liderazgo-en-ia-la-ucr-ante-su-desafio-centenario/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-gray-800 px-3.5 py-1.5 rounded-full transition-colors border border-gray-200" title="Leer en Semanario Universidad">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Leer en Semanario Universidad
+          </a>
+         </div>
+        </div>
+
+        <!-- 2022: Las vacunas salvan vidas: ¡sin duda alguna! -->
+        <div class="soft-panel searchable-item" data-category="salud vacunas covid epidemiologia hospital ninos" data-institution="ucr">
+         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag opinion">Semanario Universidad &middot; Opinión</span>
+           <span class="text-xs font-semibold font-mono text-[#0f2a43] bg-[#0f2a43]/5 px-2.5 py-0.5 rounded-full">Sep 2022</span>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Salud Pública &middot; Coautoría</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-sm sm:text-base mb-1.5">
+          Las vacunas salvan vidas: ¡sin duda alguna!
+         </h3>
+         <p class="text-xs text-gray-500 mb-1">
+          Por Dr. Juan José Romero Zúñiga (Epidemiólogo, UNA) y Agustín Gómez Meléndez (Estadístico, CIOdD-UCR)
+         </p>
+         <p class="text-xs sm:text-sm text-gray-600 mb-3 leading-relaxed">
+          Defensa rigurosa fundamentada en evidencia estadística sobre la eficacia de la vacunación ante la comparecencia legislativa de las autoridades de salud, demostrando con datos epidemiológicos la ventaja sustantiva de la protección inmunológica.
+         </p>
+         <div class="flex items-center gap-2.5 pt-1">
+          <a href="https://semanariouniversidad.com/opinion/las-vacunas-salvan-vidas-sin-duda-alguna/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-[#1f6f8b] hover:bg-[#0f2a43] text-white px-3.5 py-1.5 rounded-full transition-colors shadow-sm" title="Leer en Semanario Universidad">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Leer en Semanario Universidad
+          </a>
+         </div>
+        </div>
+
+        <!-- 2020: Voz experta: A 7 meses de la pandemia: recuento de los hechos más sobresalientes del COVID-19 en Costa Rica -->
+        <div class="soft-panel searchable-item" data-category="salud covid pandemia epidemiologia estadistica" data-institution="ucr">
+         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">Portal UCR &middot; Voz Experta</span>
+           <span class="text-xs font-semibold font-mono text-[#0f2a43] bg-[#0f2a43]/5 px-2.5 py-0.5 rounded-full">06 Oct 2020</span>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Epidemiología &middot; COVID-19</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-sm sm:text-base mb-1.5">
+          Voz experta: A 7 meses de la pandemia: recuento de los hechos más sobresalientes del COVID-19 en Costa Rica
+         </h3>
+         <p class="text-xs sm:text-sm text-gray-600 mb-3 leading-relaxed">
+          Examen detallado de la evolución de la pandemia en sus primeros siete meses: análisis de curvas epidémicas, capacidad de pruebas diagnósticas, saturación hospitalaria y las implicaciones de las medidas no farmacológicas implementadas en el país.
+         </p>
+         <div class="flex items-center gap-2.5 pt-1">
+          <a href="https://www.ucr.ac.cr/noticias/2020/10/06/voz-experta-a-7-meses-de-la-pandemia-recuento-de-los-hechos-mas-sobresalientes-del-covid-19-en-costa-rica.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-[#1f6f8b] hover:bg-[#0f2a43] text-white px-3.5 py-1.5 rounded-full transition-colors shadow-sm" title="Leer en Portal UCR">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Leer en Portal UCR
+          </a>
+         </div>
+        </div>
+
+        <!-- Ensayo Adicional: Ormuz y el Pacto de La Meca -->
+        <div class="soft-panel searchable-item" data-category="geopolitica energia ormuz prospectiva petroleo" data-institution="uned ucr">
+         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">Voz Experta &middot; Ensayo</span>
+           <span class="text-xs font-semibold font-mono text-[#0f2a43] bg-[#0f2a43]/5 px-2.5 py-0.5 rounded-full">Prospectiva</span>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Geopolítica &middot; Energía</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-sm sm:text-base mb-1.5">
+          Ormuz, el Pacto de La Meca y las lecciones para Costa Rica
+         </h3>
+         <p class="text-xs sm:text-sm text-gray-600 mb-3 leading-relaxed">
+          Evaluación geopolítica de las rutas de suministro de hidrocarburos en el estrecho de Ormuz, la vulnerabilidad ante choques externos de precios y recomendaciones estratégicas para la resiliencia energética nacional.
+         </p>
+         <div class="flex items-center gap-2.5 pt-1">
+          <button class="view-pdf-modal-btn inline-flex items-center gap-1.5 text-xs font-semibold text-[#1f6f8b] hover:text-[#0f2a43] px-3.5 py-1.5 rounded-full bg-[#1f6f8b]/10 transition-colors" data-pdf="Vozexperta/Ormuz%2C%20el%20Pacto%20de%20La%20Meca%20y%20las%20lecciones%20para%20Costa%20Rica.pdf" data-title="Ormuz, el Pacto de La Meca y las lecciones para Costa Rica">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+           Ver Documento PDF
+          </button>
+          <a href="Vozexperta/Ormuz%2C%20el%20Pacto%20de%20La%20Meca%20y%20las%20lecciones%20para%20Costa%20Rica.pdf" download class="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-800 p-1">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+           Descargar PDF
+          </a>
+         </div>
+        </div>
+
+       </div>
+      </section>
+
+      <!-- Sección 7: Proyectos Coordinados -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-5">
        <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 7h18v10H3z"></path><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"></path><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"></path></svg>
@@ -552,133 +805,167 @@
         <h2 class="section-title text-xl font-bold">Proyectos Coordinados</h2>
        </div>
        <div class="grid gap-4">
-        <div class="soft-panel">
-         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill px-3 py-1 rounded-full">UCR</span><span class="text-xs text-gray-500">Centro de Investigación Observatorio del Desarrollo</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Sistema de indicadores y datos abiertos para ODS</h3>
-         <p class="text-sm text-gray-600">Coordinación de integración de fuentes, tableros y reporting para análisis de políticas públicas.</p>
+        <div class="soft-panel searchable-item" data-category="ods datos politicas" data-institution="ucr">
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill px-3 py-1 rounded-full">UCR</span><span class="text-xs text-gray-500 font-medium">Centro de Investigación Observatorio del Desarrollo</span></div>
+         <h3 class="font-semibold text-gray-800 mb-1">Sistema de Indicadores y Datos Abiertos para ODS</h3>
+         <p class="text-sm text-gray-600">Coordinación de integración de fuentes de datos, tableros interactivos y reporting analítico para la formulación de políticas públicas basadas en evidencia.</p>
         </div>
-        <div class="soft-panel">
-         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill uned px-3 py-1 rounded-full">UNED</span><span class="text-xs text-gray-500">Equipo de OMiPYMEs</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Ecosistema de inteligencia de negocios para MiPYME</h3>
-         <p class="text-sm text-gray-600">Diseño de métricas sectoriales y estudios de mercado para apoyar la toma de decisiones.</p>
+        <div class="soft-panel searchable-item" data-category="pymes empresas inteligencia" data-institution="uned">
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill uned px-3 py-1 rounded-full">UNED</span><span class="text-xs text-gray-500 font-medium">Equipo de OMiPYMEs</span></div>
+         <h3 class="font-semibold text-gray-800 mb-1">Ecosistema de Inteligencia de Negocios para MiPYME</h3>
+         <p class="text-sm text-gray-600">Diseño de métricas sectoriales, sondeos y estudios continuos para fortalecer la toma de decisiones empresariales e institucionales en el sector productivo.</p>
         </div>
-        <div class="soft-panel">
-         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill uned px-3 py-1 rounded-full">UNED</span><span class="text-xs text-gray-500">Equipo de IA &middot; Transformación Digital</span></div>
-         <h3 class="font-semibold text-gray-800 mb-1">Implementación de capacidades de IA aplicada</h3>
-         <p class="text-sm text-gray-600">Liderazgo de iniciativas de automatización y analítica avanzada para servicios institucionales.</p>
+        <div class="soft-panel searchable-item" data-category="ia transformacion automatizacion" data-institution="uned">
+         <div class="flex flex-wrap items-center gap-2 mb-1"><span class="pill uned px-3 py-1 rounded-full">UNED</span><span class="text-xs text-gray-500 font-medium">Equipo de IA &middot; Transformación Digital</span></div>
+         <h3 class="font-semibold text-gray-800 mb-1">Implementación de Capacidades de IA Aplicada</h3>
+         <p class="text-sm text-gray-600">Liderazgo de iniciativas de automatización inteligente, modelos predictivos y analítica avanzada para enriquecer los servicios universitarios.</p>
         </div>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-5">
+      <!-- Sección 8: Participaciones Destacadas -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-6">
        <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
         </div>
         <h2 class="section-title text-xl font-bold">Participaciones Destacadas</h2>
        </div>
-       <div class="grid gap-4">
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
-         <div class="w-2 h-2 rounded-full bg-[#0f2a43] mt-2 flex-shrink-0"></div>
-         <div><p class="font-medium text-gray-800">Fundación Costarricense de Inteligencia Artificial (FAIR-CR)</p><p class="text-sm text-gray-500">Miembro desde 2026</p></div>
+       <div class="grid gap-3">
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
+         <div class="w-2.5 h-2.5 rounded-full bg-[#d9a441] mt-1.5 flex-shrink-0"></div>
+         <div>
+          <p class="font-medium text-gray-800">
+           <a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="hover:text-[#1f6f8b] hover:underline flex items-center gap-1.5">
+            Fundación Costarricense de IA Responsable (FAIR)
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           </a>
+          </p>
+          <p class="text-xs text-gray-600 mt-0.5">Director de Investigación y Director de Proyectos (desde mediados de 2025 a la fecha)</p>
+          <a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="text-xs text-[#1f6f8b] font-mono hover:underline inline-flex items-center gap-1 mt-1">https://www.fair.cr/</a>
+         </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
-         <div class="w-2 h-2 rounded-full bg-[#0f2a43] mt-2 flex-shrink-0"></div>
-         <div><p class="font-medium text-gray-800">Consejo Directivo - INEC Costa Rica</p><p class="text-sm text-gray-500">Instituto Nacional de Estadísticas y Censos (2015-2021)</p></div>
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
+         <div class="w-2.5 h-2.5 rounded-full bg-[#0f2a43] mt-1.5 flex-shrink-0"></div>
+         <div>
+          <p class="font-medium text-gray-800">Consejo Directivo &middot; INEC Costa Rica</p>
+          <p class="text-xs text-gray-500">Instituto Nacional de Estadística y Censos (2015 &ndash; 2021)</p>
+         </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
-         <div class="w-2 h-2 rounded-full bg-[#0f2a43] mt-2 flex-shrink-0"></div>
-         <div><p class="font-medium text-gray-800">Consejo Técnico Asesor - Centro de Investigación Observatorio del Desarrollo (CIOdD)</p><p class="text-sm text-gray-500">Universidad de Costa Rica (desde 2011)</p></div>
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
+         <div class="w-2.5 h-2.5 rounded-full bg-[#0f2a43] mt-1.5 flex-shrink-0"></div>
+         <div>
+          <p class="font-medium text-gray-800">Consejo Técnico Asesor &middot; Centro de Investigación Observatorio del Desarrollo (CIOdD)</p>
+          <p class="text-xs text-gray-500">Universidad de Costa Rica (desde 2011)</p>
+         </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
-         <div class="w-2 h-2 rounded-full bg-[#0f2a43] mt-2 flex-shrink-0"></div>
-         <div><p class="font-medium text-gray-800">Observatorio Cousteau de los Mares y Costas</p><p class="text-sm text-gray-500">Centro América (desde 2011)</p></div>
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
+         <div class="w-2.5 h-2.5 rounded-full bg-[#0f2a43] mt-1.5 flex-shrink-0"></div>
+         <div>
+          <p class="font-medium text-gray-800">Observatorio Cousteau de los Mares y Costas</p>
+          <p class="text-xs text-gray-500">Centroamérica (desde 2011)</p>
+         </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
-         <div class="w-2 h-2 rounded-full bg-[#0f2a43] mt-2 flex-shrink-0"></div>
-         <div><p class="font-medium text-gray-800">Consejo Consultivo - Primera Escuela de Big Data y Estadística</p><p class="text-sm text-gray-500">Escuela de Estadística, UCR (2015)</p></div>
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gradient-to-r from-[#0f2a43]/5 to-transparent">
+         <div class="w-2.5 h-2.5 rounded-full bg-[#0f2a43] mt-1.5 flex-shrink-0"></div>
+         <div>
+          <p class="font-medium text-gray-800">Consejo Consultivo &middot; Primera Escuela de Big Data y Estadística</p>
+          <p class="text-xs text-gray-500">Escuela de Estadística, UCR (2015)</p>
+         </div>
         </div>
        </div>
       </section>
+
      </div>
 
+     <!-- Columna Derecha / Barra Lateral de Información -->
      <div class="space-y-6">
+
+      <!-- Tarjeta: Descargar Lista de Proyectos -->
       <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-1">
-       <div class="flex items-center gap-3 mb-4">
+       <div class="flex items-center gap-3 mb-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
         </div>
-        <h2 class="section-title text-lg font-bold">Lista de Proyectos</h2>
+        <h2 class="section-title text-lg font-bold">Catálogo de Proyectos</h2>
        </div>
-       <p class="text-sm text-gray-600 mb-4">Descargue el documento completo con los proyectos desarrollados.</p>
-       <a href="Listaproyectos.pdf" download class="print-btn inline-flex w-full items-center justify-center gap-2 text-white px-4 py-2.5 rounded-xl font-medium shadow-md">
+       <p class="text-xs text-gray-600 mb-4 leading-relaxed">Descargue el documento consolidado con el inventario completo de proyectos de investigación y consultoría desarrollados.</p>
+       <a href="Listaproyectos.pdf" download class="print-btn inline-flex w-full items-center justify-center gap-2 text-white px-4 py-2.5 rounded-xl font-medium shadow-md text-sm">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-        Descargar PDF
+        Descargar Listaproyectos.pdf
        </a>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-1">
+      <!-- Tarjeta: Canales de Contacto Directo -->
+      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-2" id="contacto">
        <div class="flex items-center gap-3 mb-5">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"></path></svg>
         </div>
-        <h2 class="section-title text-lg font-bold">Contacto</h2>
+        <h2 class="section-title text-lg font-bold">Contacto Institucional</h2>
        </div>
        <div class="space-y-4">
         <div class="flex items-center gap-3">
          <div class="w-8 h-8 rounded-lg bg-[#0f2a43]/10 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div>
-         <div class="min-w-0"><p class="text-xs text-gray-500">Personal</p><p class="text-sm text-gray-700 truncate">gomez.agustin@gmail.com</p></div>
+         <div class="min-w-0"><p class="text-xs text-gray-500 font-medium">Correo Personal</p><a href="mailto:gomez.agustin@gmail.com" class="text-xs text-gray-800 font-mono hover:underline block truncate">gomez.agustin@gmail.com</a></div>
         </div>
         <div class="flex items-center gap-3">
          <div class="w-8 h-8 rounded-lg bg-[#0f2a43]/10 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div>
-         <div class="min-w-0"><p class="text-xs text-gray-500">UCR &middot; CIOdD</p><p class="text-sm text-gray-700 truncate">agustin.gomez@ucr.ac.cr</p></div>
+         <div class="min-w-0"><p class="text-xs text-gray-500 font-medium">UCR &middot; CIOdD</p><a href="mailto:agustin.gomez@ucr.ac.cr" class="text-xs text-gray-800 font-mono hover:underline block truncate">agustin.gomez@ucr.ac.cr</a></div>
         </div>
         <div class="flex items-center gap-3">
          <div class="w-8 h-8 rounded-lg bg-[#0f2a43]/10 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div>
-         <div class="min-w-0"><p class="text-xs text-gray-500">UNED</p><p class="text-sm text-gray-700 truncate">agomezme@uned.ac.cr</p></div>
+         <div class="min-w-0"><p class="text-xs text-gray-500 font-medium">UNED &middot; Transformación Digital</p><a href="mailto:agomezme@uned.ac.cr" class="text-xs text-gray-800 font-mono hover:underline block truncate">agomezme@uned.ac.cr</a></div>
+        </div>
+        <div class="flex items-center gap-3">
+         <div class="w-8 h-8 rounded-lg bg-[#0f2a43]/10 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg></div>
+         <div class="min-w-0"><p class="text-xs text-gray-500 font-medium">Registro Científico</p><a href="https://orcid.org/0000-0002-7383-3754" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-800 font-mono hover:underline block truncate">ORCID: 0000-0002-7383-3754</a></div>
         </div>
         <div class="flex items-center gap-3">
          <div class="w-8 h-8 rounded-lg bg-[#0f2a43]/10 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
-         <div><p class="text-xs text-gray-500">Nacimiento</p><p class="text-sm text-gray-700">3 de Octubre, 1981</p></div>
+         <div><p class="text-xs text-gray-500 font-medium">Nacimiento</p><p class="text-xs text-gray-700">3 de Octubre, 1981</p></div>
         </div>
         <div class="flex items-center gap-3">
          <div class="w-8 h-8 rounded-lg bg-[#0f2a43]/10 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-         <div><p class="text-xs text-gray-500">Origen</p><p class="text-sm text-gray-700">Granada, Nicaragua</p></div>
+         <div><p class="text-xs text-gray-500 font-medium">Origen</p><p class="text-xs text-gray-700">Granada, Nicaragua &middot; Ciudadano Costarricense</p></div>
         </div>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-2">
+      <!-- Tarjeta: Formación Académica -->
+      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-3">
        <div class="flex items-center gap-3 mb-5">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
         </div>
-        <h2 class="section-title text-lg font-bold">Formación</h2>
+        <h2 class="section-title text-lg font-bold">Formación Académica</h2>
        </div>
        <div class="space-y-5">
         <div class="relative pl-4 border-l-2 border-[#1f6f8b]">
          <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-[#1f6f8b]"></div>
-         <p class="text-xs text-[#0f2a43] font-semibold mb-1">2004 - 2006</p>
+         <p class="text-xs text-[#0f2a43] font-bold mb-1">2004 &ndash; 2006</p>
          <p class="font-semibold text-gray-800 text-sm">Maestría en Sistemas de Información</p>
-         <p class="text-xs text-gray-500">Universidad Latina, Costa Rica</p>
+         <p class="text-xs text-gray-500">Universidad Latina de Costa Rica</p>
         </div>
         <div class="relative pl-4 border-l-2 border-[#1f6f8b]">
          <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-[#1f6f8b]"></div>
-         <p class="text-xs text-[#0f2a43] font-semibold mb-1">1999 - 2003</p>
+         <p class="text-xs text-[#0f2a43] font-bold mb-1">1999 &ndash; 2003</p>
          <p class="font-semibold text-gray-800 text-sm">Bachillerato en Estadística</p>
-         <p class="text-xs text-gray-500">Universidad de Costa Rica</p>
+         <p class="text-xs text-gray-500">Universidad de Costa Rica (UCR)</p>
         </div>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-3">
-       <div class="flex items-center gap-3 mb-5">
+      <!-- Tarjeta: Áreas de Especialidad / Filtro al hacer clic -->
+      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-4">
+       <div class="flex items-center gap-3 mb-4">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         </div>
         <h2 class="section-title text-lg font-bold">Áreas de Expertise</h2>
        </div>
-       <div class="flex flex-wrap gap-2">
+       <p class="text-xs text-gray-500 mb-3">Haga clic en cualquier etiqueta para filtrar publicaciones e informes:</p>
+       <div class="flex flex-wrap gap-1.5">
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Inteligencia Artificial</span>
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Estadística</span>
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Datos Abiertos</span>
@@ -689,44 +976,123 @@
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">MiPYME</span>
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Salud Pública</span>
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Medio Ambiente</span>
+        <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Movilidad</span>
         <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium text-[#0f2a43]">Gestión del Conocimiento</span>
        </div>
       </section>
 
-      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-4">
-       <div class="flex items-center gap-3 mb-5">
+      <!-- Tarjeta: Colegiatura Profesional Oficial -->
+      <section class="glass-card section-card rounded-2xl p-6 animate-fade-in stagger-5">
+       <div class="flex items-center gap-3 mb-4">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f2a43] to-[#1f6f8b] flex items-center justify-center">
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
         </div>
-        <h2 class="section-title text-lg font-bold">Colegiatura</h2>
+        <h2 class="section-title text-lg font-bold">Colegiatura Oficial</h2>
        </div>
-       <div class="bg-gradient-to-br from-[#0f2a43]/5 to-[#1f6f8b]/5 rounded-xl p-4">
-        <p class="font-semibold text-gray-800 text-sm mb-1">Colegio de Profesionales en Ciencias Económicas</p>
-        <p class="text-xs text-gray-600">Carné N° 016331</p>
-        <p class="text-xs text-gray-500">Incorporado desde 01/07/2005</p>
+       <div class="bg-gradient-to-br from-[#0f2a43]/5 to-[#1f6f8b]/5 rounded-xl p-4 border border-[#0f2a43]/10">
+        <p class="font-semibold text-gray-800 text-sm mb-1">Colegio de Profesionales en Ciencias Económicas de Costa Rica</p>
+        <p class="text-xs text-gray-700 font-mono font-medium">Carné Profesional N° 016331</p>
+        <p class="text-xs text-gray-500 mt-1">Miembro incorporado desde el 01/07/2005</p>
        </div>
       </section>
+
      </div>
+
     </div>
 
-    <footer class="mt-8 text-center animate-fade-in stagger-6">
-     <p class="text-sm text-gray-500">Última actualización: 2026 &middot; CIOdD-UCR &amp; OMiPYMEs-UNED</p>
+    <!-- Pie de Página con Licencia Creative Commons (CC BY-NC-SA 4.0) -->
+    <footer class="mt-12 pt-8 border-t border-gray-200/80 animate-fade-in stagger-6">
+     <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      
+      <!-- Insignia y Enlace Creative Commons -->
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+       <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer" class="flex-shrink-0 transition-transform hover:scale-105" title="Ver términos de la Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional">
+        <!-- SVG Oficial Creative Commons: CC + BY + NC + SA -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="42" viewBox="0 0 120 42" class="fill-current text-[#0f2a43]">
+         <rect width="120" height="42" rx="8" fill="#0f2a43" />
+         <!-- Icono CC -->
+         <g transform="translate(10, 9) scale(0.65)" fill="#ffffff">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <path d="M23 13.5a6.5 6.5 0 1 0 0 9M15 13.5a6.5 6.5 0 1 0 0 9" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+         </g>
+         <!-- Icono BY (Persona) -->
+         <g transform="translate(38, 9) scale(0.65)" fill="#ffffff">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <circle cx="18" cy="12" r="3.5"/>
+          <path d="M12 26v-5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+         </g>
+         <!-- Icono NC (No Comercial / Dólar tachado) -->
+         <g transform="translate(66, 9) scale(0.65)" fill="#ffffff">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <path d="M18 9v18M14.5 14h6a2 2 0 0 1 0 4h-5a2 2 0 0 0 0 4h6M9 9l18 18" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+         </g>
+         <!-- Icono SA (Compartir Igual / Flecha circular) -->
+         <g transform="translate(94, 9) scale(0.65)" fill="#ffffff">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <path d="M22 13a7 7 0 1 0 2 6" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M22 9v4h-4" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         </g>
+        </svg>
+       </a>
+
+       <div>
+        <p class="text-xs sm:text-sm font-semibold text-gray-800">
+         Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)
+        </p>
+        <p class="text-xs text-gray-600 mt-1 max-w-xl">
+         Se autoriza la copia, distribución y adaptación de estos materiales con fines académicos y de investigación, siempre que se reconozca la autoría original de <strong>Agustín Gómez Meléndez</strong>, no se haga uso comercial y las obras derivadas se compartan bajo la misma licencia. Consulte el archivo <a href="LICENSE" class="underline font-semibold hover:text-[#0f2a43]">LICENSE</a>.
+        </p>
+       </div>
+      </div>
+
+      <!-- Marcas institucionales y copyright -->
+      <div class="text-xs text-gray-500 flex flex-col items-center md:items-end gap-1 flex-shrink-0">
+       <span class="font-bold text-gray-700">&copy; 2026 Agustín Gómez Meléndez</span>
+       <span>CIOdD &middot; Universidad de Costa Rica</span>
+       <span>OMiPYMEs &middot; Universidad Estatal a Distancia</span>
+       <span><a href="https://www.fair.cr/" target="_blank" rel="noopener noreferrer" class="hover:underline">FAIR &middot; Fundación Costarricense de IA Responsable</a></span>
+       <span class="text-[11px] text-gray-400">Actualizado: 2026 &middot; Costa Rica</span>
+      </div>
+
+     </div>
     </footer>
+
    </div>
   </div>
-  <script>
-   document.getElementById('pdfListPanel').addEventListener('click', function(e) {
-    var item = e.target.closest('.pdf-list-item');
-    if (!item) return;
-    var pdf = item.getAttribute('data-pdf');
-    var title = item.getAttribute('data-title');
-    this.querySelectorAll('.pdf-list-item').forEach(function(el) { el.classList.remove('active'); });
-    item.classList.add('active');
-    document.getElementById('pdfViewerFrame').src = pdf;
-    document.getElementById('pdfTitleDisplay').textContent = title;
-    document.getElementById('pdfOpenBtn').href = pdf;
-    document.getElementById('pdfDownloadBtn').href = pdf;
-   });
-  </script>
+
+  <!-- MODAL DE VISUALIZACIÓN DE PDF A PANTALLA COMPLETA (Zero Recortes) -->
+  <div id="pdfModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-md p-2 sm:p-4" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+   <div class="relative w-full max-w-6xl h-[95vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200">
+    <!-- Barra Superior del Modal -->
+    <div class="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-gradient-to-r from-[#0f2a43] to-[#1f6f8b] text-white">
+     <div class="flex items-center gap-3 min-w-0 pr-4">
+      <span class="p-1.5 rounded-lg bg-white/10 hidden sm:inline-flex">
+       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+      </span>
+      <h3 id="pdfModalTitle" class="font-bold text-sm sm:text-base truncate">Visualizador de Documento</h3>
+     </div>
+     <div class="flex items-center gap-2 flex-shrink-0">
+      <a id="pdfModalOpenBtn" href="#" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/15 hover:bg-white/25 text-white px-3 py-1.5 rounded-full font-medium transition-colors flex items-center gap-1.5" title="Abrir en pestaña nueva">
+       <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+       <span class="hidden sm:inline">Nueva Pestaña</span>
+      </a>
+      <a id="pdfModalDownloadBtn" href="#" download class="text-xs bg-[#d9a441] hover:bg-[#c49234] text-[#0f2a43] px-3.5 py-1.5 rounded-full font-bold transition-colors flex items-center gap-1.5 shadow" title="Descargar archivo PDF">
+       <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+       Descargar
+      </a>
+      <button id="pdfModalCloseBtn" class="text-white/80 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors ml-1" title="Cerrar visor (Esc)">
+       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+     </div>
+    </div>
+    <!-- Contenedor del Iframe a Pantalla Completa -->
+    <div class="flex-1 w-full bg-slate-200">
+     <iframe id="pdfModalFrame" class="w-full h-full border-none" src="" title="Lector de PDF a Pantalla Completa"></iframe>
+    </div>
+   </div>
+  </div>
+
+  <!-- Lógica Interactiva Central (Visor, Buscador, Filtros y Lector Modal) -->
+  <script src="script.js"></script>
  </body>
 </html>

@@ -1,6 +1,561 @@
-body{
-  padding: 25px;
+/* ==========================================================================
+   Estilos Principales - Portafolio y CV Agustín Gómez Meléndez (2026)
+   ========================================================================== */
+
+:root {
+  --primary: #0f2a43;
+  --secondary: #1f6f8b;
+  --accent: #d9a441;
+  --accent-light: #fbeecd;
+  --uned: #2f9e7a;
+  --uned-dark: #1b5e47;
+  --ink: #0b1f33;
+  --muted: #5b6b7a;
+  --card: rgba(255, 255, 255, 0.94);
+  --card-hover: rgba(255, 255, 255, 0.98);
+  --glass-border: rgba(15, 42, 67, 0.12);
+  --glass-border-focus: rgba(31, 111, 139, 0.4);
+  --shadow-soft: 0 10px 30px rgba(15, 42, 67, 0.08);
+  --shadow-strong: 0 22px 60px rgba(15, 42, 67, 0.16);
+  --font-body: "Outfit", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --bg-base: #f3f6f9;
+  --bg-mid: #eef3f7;
+  --bg-deep: #e5edf4;
 }
-.title {
-	color: #5C6AC4;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(217, 164, 65, 0.12), transparent 48%),
+    radial-gradient(circle at 88% 18%, rgba(31, 111, 139, 0.15), transparent 45%),
+    linear-gradient(135deg, var(--bg-base) 0%, var(--bg-mid) 55%, var(--bg-deep) 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.page-shell {
+  position: relative;
+  padding: 32px 16px 64px;
+}
+
+.bg-ornament {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 6% 30%, rgba(15, 42, 67, 0.07), transparent 35%),
+    radial-gradient(circle at 92% 35%, rgba(31, 111, 139, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(217, 164, 65, 0.10), transparent 35%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 42, 67, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.page-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tarjetas con efecto Glassmorphism */
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hero-card {
+  box-shadow: var(--shadow-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60%;
+  height: 180%;
+  background: conic-gradient(from 180deg at 50% 50%, rgba(217,164,65,0.12), rgba(31,111,139,0.15), rgba(15,42,67,0.10), rgba(217,164,65,0.12));
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accent-line {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 45%, transparent 100%);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--secondary);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(217,164,65,0.22);
+}
+
+/* Insignias institucionales */
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 42, 67, 0.14);
+  background: rgba(255,255,255,0.75);
+  color: var(--ink);
+  box-shadow: 0 2px 6px rgba(15, 42, 67, 0.04);
+}
+
+.role-badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.role-badge.ucr .dot { background: var(--secondary); }
+.role-badge.uned .dot { background: var(--uned); }
+
+.timeline-dot {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 0 4px rgba(15, 42, 67, 0.12);
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, rgba(15, 42, 67, 0.06), rgba(31, 111, 139, 0.10));
+  border: 1px solid rgba(15, 42, 67, 0.15);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 42, 67, 0.15);
+}
+
+.section-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-soft);
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(15, 42, 67, 0.12);
+}
+
+.section-title {
+  font-size: 1.15rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.contact-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 2px 6px rgba(15, 42, 67, 0.2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 42, 67, 0.08);
+  border: 1px solid rgba(15, 42, 67, 0.15);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.print-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  transition: all 0.25s ease;
+}
+
+.print-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 42, 67, 0.3);
+}
+
+.pill {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 0.7rem;
+}
+
+.pill.uned {
+  background: linear-gradient(135deg, #14532d, var(--uned));
+}
+
+.soft-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(245, 248, 251, 0.92));
+  border: 1px solid rgba(15, 42, 67, 0.08);
+  border-radius: 18px;
+  padding: 16px 20px;
+  transition: all 0.25s ease;
+}
+
+.soft-panel:hover {
+  border-color: rgba(31, 111, 139, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 42, 67, 0.08);
+}
+
+.highlight-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.highlight-item {
+  background: rgba(15, 42, 67, 0.04);
+  border: 1px solid rgba(15, 42, 67, 0.08);
+  border-radius: 16px;
+  padding: 12px 16px;
+}
+
+.highlight-item span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.highlight-item strong {
+  font-size: 0.92rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Avatar de perfil */
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 9999px;
+}
+
+.profile-avatar {
+  width: 9rem;
+  height: 9rem;
+}
+
+@media (max-width: 480px) {
+  .profile-avatar { width: 6.5rem; height: 6.5rem; }
+  .page-shell { padding: 20px 12px 48px; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .profile-avatar { width: 8rem; height: 8rem; }
+}
+
+@media (min-width: 1025px) {
+  .profile-avatar { width: 10rem; height: 10rem; }
+}
+
+/* Tarjetas de documentos compactas e interactivas */
+.doc-compact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 42, 67, 0.09);
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.doc-compact:hover {
+  background: #ffffff;
+  border-color: rgba(31, 111, 139, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 42, 67, 0.09);
+}
+
+.doc-tag {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.doc-tag.ucr { background: rgba(31, 111, 139, 0.12); color: var(--secondary); border: 1px solid rgba(31, 111, 139, 0.2); }
+.doc-tag.uned { background: rgba(47, 158, 122, 0.12); color: var(--uned); border: 1px solid rgba(47, 158, 122, 0.2); }
+.doc-tag.opinion { background: rgba(217, 164, 65, 0.15); color: #926614; border: 1px solid rgba(217, 164, 65, 0.3); }
+.doc-tag.pdf { background: rgba(239, 68, 68, 0.12); color: #dc2626; border: 1px solid rgba(239, 68, 68, 0.25); }
+
+/* ==========================================================================
+   NUEVO VISOR DE PDF A ANCHO COMPLETO (Sin recortes horizontales)
+   ========================================================================== */
+.pdf-viewer-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.pdf-viewer-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(15, 42, 67, 0.04) 0%, rgba(31, 111, 139, 0.08) 100%);
+  border-bottom: 1px solid rgba(15, 42, 67, 0.1);
+}
+
+@media (min-width: 640px) {
+  .pdf-viewer-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.pdf-select-dropdown {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 42, 67, 0.18);
+  background: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.pdf-select-dropdown:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(31, 111, 139, 0.15);
+}
+
+.pdf-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 42, 67, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pdf-action-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.pdf-action-btn.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+}
+
+.pdf-action-btn.primary-btn:hover {
+  box-shadow: 0 4px 14px rgba(15, 42, 67, 0.25);
+}
+
+.pdf-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  background: #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .pdf-frame-wrapper {
+    height: 480px;
+  }
+}
+
+.pdf-viewer-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Modal de Visualización a Pantalla Completa */
+#pdfModal {
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+#pdfModal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#pdfModal:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Barra de Búsqueda y Filtros */
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(15, 42, 67, 0.14);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--secondary);
+  background: rgba(31, 111, 139, 0.1);
+}
+
+.filter-chip.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(15, 42, 67, 0.18);
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 18px 12px 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 42, 67, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  font-size: 0.88rem;
+  color: var(--ink);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.search-input:focus {
+  border-color: var(--secondary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(31, 111, 139, 0.18);
+}
+
+/* Animaciones */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+
+/* Estilos de impresión */
+@media print {
+  .print-btn,
+  .no-print,
+  .pdf-viewer-container,
+  .search-filter-section,
+  .fixed-nav,
+  #pdfModal {
+    display: none !important;
+  }
+  .glass-card {
+    background: #fff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .page-shell {
+    padding: 0 !important;
+  }
+  .page-shell::before,
+  .bg-ornament {
+    display: none !important;
+  }
 }
