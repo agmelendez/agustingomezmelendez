@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (query !== '' || currentCategory !== 'all') {
         resultCounter.textContent = `${visibleCount} resultados encontrados`;
       } else {
-        resultCounter.textContent = `${searchableCards.length} documentos disponibles`;
+        resultCounter.textContent = '58 documentos en PDF · 6 Apps Interactivas';
       }
     }
 

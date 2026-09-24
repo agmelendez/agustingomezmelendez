@@ -532,6 +532,167 @@ h1, h2, h3, h4, .display {
 .stagger-5 { animation-delay: 0.25s; }
 .stagger-6 { animation-delay: 0.3s; }
 
+/* ==========================================================================
+   TARJETAS DE PROYECTOS Y PLATAFORMAS WEB INTERACTIVAS (GITHUB PAGES)
+   ========================================================================== */
+.project-app-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .project-app-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project-app-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 42, 67, 0.12);
+  border-radius: 20px;
+  padding: 22px 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(15, 42, 67, 0.05);
+  overflow: hidden;
+}
+
+.project-app-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary), #2f9e7a);
+  opacity: 0.95;
+}
+
+.project-app-card.accent-purple::before {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+.project-app-card.accent-amber::before {
+  background: linear-gradient(90deg, #d9a441, #f59e0b);
+}
+
+.project-app-card.accent-emerald::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.project-app-card.accent-cyan::before {
+  background: linear-gradient(90deg, #0ea5e9, #1f6f8b);
+}
+
+.project-app-card.accent-rose::before {
+  background: linear-gradient(90deg, #e11d48, #f43f5e);
+}
+
+.project-app-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(31, 111, 139, 0.4);
+  box-shadow: 0 16px 36px rgba(15, 42, 67, 0.12);
+}
+
+.live-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+}
+
+.live-pulse .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseAnimation 2s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.app-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(15, 42, 67, 0.05);
+  color: var(--muted);
+  border: 1px solid rgba(15, 42, 67, 0.08);
+  font-family: var(--font-mono);
+}
+
+.app-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #ffffff !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(15, 42, 67, 0.2);
+  text-decoration: none;
+}
+
+.app-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 42, 67, 0.3);
+  color: #ffffff !important;
+}
+
+.app-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(31, 111, 139, 0.08);
+  color: var(--secondary) !important;
+  border: 1px solid rgba(31, 111, 139, 0.2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.app-btn-secondary:hover {
+  background: rgba(31, 111, 139, 0.16);
+  color: var(--primary) !important;
+  transform: translateY(-2px);
+}
+
+
 /* Estilos de impresión */
 @media print {
   .print-btn,

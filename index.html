@@ -89,6 +89,7 @@
         <div class="highlight-item"><span>Experiencia</span><strong>+25 años en gestión de datos</strong></div>
         <div class="highlight-item"><span>Especialidad</span><strong>IA, datos abiertos y políticas públicas</strong></div>
         <div class="highlight-item"><span>Enfoque</span><strong>Impacto sostenible y ODS</strong></div>
+        <div class="highlight-item"><span>Desarrollo Web</span><strong>6 Simuladores en GitHub Pages</strong></div>
        </div>
 
        <div class="flex flex-wrap justify-center md:justify-start items-center gap-3 text-sm">
@@ -122,11 +123,11 @@
        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
        </span>
-       <input type="text" id="globalSearchInput" class="search-input" placeholder="Buscar por tema, palabra clave o título (ej: IA, Waze, Covid, Llama, ODS, Epidemiología)..." aria-label="Buscar en todo el portafolio">
+       <input type="text" id="globalSearchInput" class="search-input" placeholder="Buscar por tema, palabra clave o título (ej: IA, Simulador, Reloj, Waze, Covid, Llama, ODS)..." aria-label="Buscar en todo el portafolio">
        <button id="clearSearchBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs font-semibold px-2 py-1 rounded bg-gray-100 hidden" title="Limpiar búsqueda">✕ Limpiar</button>
       </div>
       <div class="flex-shrink-0 text-xs font-semibold text-gray-500 font-mono" id="searchResultCount">
-       58 documentos en PDF disponibles
+       58 documentos en PDF &middot; 6 Apps Interactivas
       </div>
      </div>
 
@@ -134,6 +135,7 @@
      <div class="flex flex-wrap items-center gap-2 pt-1 border-t border-gray-100">
       <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mr-1">Filtrar por:</span>
       <button class="filter-chip active" data-filter="all">Todos</button>
+      <button class="filter-chip" data-filter="interactivo">⚡ Apps Interactivas</button>
       <button class="filter-chip" data-filter="ia">Inteligencia Artificial</button>
       <button class="filter-chip" data-filter="salud">Salud &amp; Epidemiología</button>
       <button class="filter-chip" data-filter="movilidad">Movilidad &amp; Waze</button>
@@ -214,7 +216,242 @@
        </div>
       </section>
 
-      <!-- Sección 3: Informes Técnicos con Visor de Ancho Completo (Sin cortes laterales) -->
+      <!-- Sección 3: Plataformas Web y Simuladores de Investigación Interactiva (GitHub Pages) -->
+      <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-2" id="plataformas-web">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1f6f8b] to-[#2f9e7a] flex items-center justify-center">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <div>
+         <h2 class="section-title text-xl font-bold">Plataformas Web &amp; Simuladores Interactivos</h2>
+         <p class="text-xs text-gray-500">Proyectos y aplicaciones web de investigación científica en GitHub Pages</p>
+        </div>
+        <span class="badge ml-auto">6 Apps en Vivo</span>
+       </div>
+       <p class="text-sm text-gray-600 mb-6">Plataformas analíticas, dashboards en tiempo real y modelos de simulación probabilística desarrollados como parte de los proyectos de investigación científica de la UCR.</p>
+
+       <div class="project-app-grid">
+
+        <!-- Proyecto 1: Reloj de la Confianza del Consumidor -->
+        <article class="project-app-card accent-cyan searchable-item" data-category="interactivo economia consumo confianza series macroeconomia ucr" data-institution="ucr">
+         <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; CIOdD</span>
+           <span class="live-pulse"><span class="pulse-dot"></span>App en Vivo</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">2002&ndash;2026</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-base mb-1">
+          Reloj de la Confianza del Consumidor
+         </h3>
+         <p class="text-xs font-medium text-[#1f6f8b] mb-2.5">
+          Panel interactivo del ICC, ICEA e IEE para Costa Rica &middot; 6 administraciones
+         </p>
+         <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">
+          Sistema analítico dinámico que descompone el Índice de Confianza del Consumidor (ICC) en expectativas (IEE) y condiciones actuales (ICEA). Incluye el cuadrante económico interactivo tipo reloj, visualización por periodos de gobierno y descarga de microdatos en JSON.
+         </p>
+         <div class="flex flex-wrap gap-1.5 mb-4">
+          <span class="app-tag">Series Temporales</span>
+          <span class="app-tag">Macroeconomía</span>
+          <span class="app-tag">Datos JSON</span>
+          <span class="app-tag">UCR</span>
+         </div>
+         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
+          <a href="https://agmelendez.github.io/relojconfianzaconsumidor/" target="_blank" rel="noopener noreferrer" class="app-btn-primary flex-1 sm:flex-initial" title="Abrir Reloj de la Confianza del Consumidor">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Explorar Reloj
+          </a>
+          <a href="https://agmelendez.github.io/relojconfianzaconsumidor/data/reloj_consumidor.json" target="_blank" rel="noopener noreferrer" class="app-btn-secondary" title="Descargar datos en formato JSON">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+           Datos JSON
+          </a>
+         </div>
+        </article>
+
+        <!-- Proyecto 2: Simulación Electoral Costa Rica 2026 -->
+        <article class="project-app-card accent-amber searchable-item" data-category="interactivo estadistica montecarlo elecciones prediccion ucr" data-institution="ucr">
+         <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; CIOdD</span>
+           <span class="live-pulse"><span class="pulse-dot"></span>App en Vivo</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">200K Sims</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-base mb-1">
+          Simulación Electoral Costa Rica 2026
+         </h3>
+         <p class="text-xs font-medium text-[#1f6f8b] mb-2.5">
+          Análisis probabilístico y predictivo electoral &middot; Monte Carlo en Python
+         </p>
+         <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">
+          Simulador analítico basado en 200.000 iteraciones probabilísticas Monte Carlo para estimar la distribución del voto, probabilidades de primera y segunda ronda, umbrales de incertidumbre y composición legislativa hacia las elecciones presidenciales de 2026.
+         </p>
+         <div class="flex flex-wrap gap-1.5 mb-4">
+          <span class="app-tag">Monte Carlo</span>
+          <span class="app-tag">Python</span>
+          <span class="app-tag">Elecciones 2026</span>
+          <span class="app-tag">Probabilidad</span>
+         </div>
+         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
+          <a href="https://agmelendez.github.io/simulacionelecciones2026/" target="_blank" rel="noopener noreferrer" class="app-btn-primary flex-1 sm:flex-initial" title="Abrir Simulador Electoral Costa Rica 2026">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Abrir Simulador
+          </a>
+          <button class="view-pdf-modal-btn app-btn-secondary" data-pdf="Articulos/CIOdD_UCR_Simulacio%CC%81n%20Montecarlo%20Elecciones%20presidenciales%202026.pdf" data-title="Simulación Montecarlo Elecciones Presidenciales 2026" title="Ver Artículo Científico en PDF">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+           Ver Paper PDF
+          </button>
+         </div>
+        </article>
+
+        <!-- Proyecto 3: Simulación Cognitiva CR 2026 -->
+        <article class="project-app-card accent-purple searchable-item" data-category="interactivo ia cognicion simulacion abm educacion ucr" data-institution="ucr">
+         <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; CIOdD</span>
+           <span class="live-pulse"><span class="pulse-dot"></span>App en Vivo</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">ABM V4.1</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-base mb-1">
+          Simulador Cognitivo: Memoria &amp; Aprendizaje
+         </h3>
+         <p class="text-xs font-medium text-[#1f6f8b] mb-2.5">
+          Modelado basado en agentes (ABM) ante exposición a IA y pantallas &middot; CR 2026
+         </p>
+         <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">
+          Modelo que simula trayectorias de consolidación de memoria en 1.200 estudiantes-agente a través de 60 colegios sintéticos en 40 semanas lectivas. Analiza el impacto diferencial de la exposición digital nocturna, sobrecarga de atención y mediación pedagógica con IA.
+         </p>
+         <div class="flex flex-wrap gap-1.5 mb-4">
+          <span class="app-tag">Modelos ABM</span>
+          <span class="app-tag">IA en Educación</span>
+          <span class="app-tag">TRI (θ-IMAE)</span>
+          <span class="app-tag">Neurocognición</span>
+         </div>
+         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
+          <a href="https://agmelendez.github.io/simulacion-cognitiva-cr-2026/" target="_blank" rel="noopener noreferrer" class="app-btn-primary flex-1 sm:flex-initial" title="Abrir Plataforma de Simulación Cognitiva">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Abrir Plataforma
+          </a>
+          <button class="view-pdf-modal-btn app-btn-secondary" data-pdf="Articulos/CIOdD_UCR_Articulo_simulacion_cognitiva_CR_2026.pdf" data-title="Simulación Cognitiva en Secundaria CR 2026" title="Ver Artículo Científico en PDF">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+           Ver Paper PDF
+          </button>
+         </div>
+        </article>
+
+        <!-- Proyecto 4: LLM-HPC (Fine-Tuning LLaMA 3.2 1B) -->
+        <article class="project-app-card accent-cyan searchable-item" data-category="interactivo ia hpc modelos llm supercomputacion ucr" data-institution="ucr">
+         <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; HPC</span>
+           <span class="live-pulse"><span class="pulse-dot"></span>App en Vivo</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">LLaMA 3.2</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-base mb-1">
+          Fine-Tuning de LLMs en Cluster HPC
+         </h3>
+         <p class="text-xs font-medium text-[#1f6f8b] mb-2.5">
+          Afinamiento en español con QLoRA (4-bit) y Unsloth &middot; Supercómputo UCR
+         </p>
+         <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">
+          Investigación experimental y entorno de entrenamiento de alto rendimiento para el ajuste instruccional del modelo LLaMA 3.2 1B Instruct en español, reduciendo el consumo de memoria VRAM hasta un 70% sin degradar la precisión semántica en tareas de razonamiento.
+         </p>
+         <div class="flex flex-wrap gap-1.5 mb-4">
+          <span class="app-tag">LLM &amp; QLoRA</span>
+          <span class="app-tag">Unsloth</span>
+          <span class="app-tag">Cluster HPC-UCR</span>
+          <span class="app-tag">PyTorch</span>
+         </div>
+         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
+          <a href="https://agmelendez.github.io/llm-hpc/" target="_blank" rel="noopener noreferrer" class="app-btn-primary flex-1 sm:flex-initial" title="Ver Proyecto LLM-HPC en GitHub Pages">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Ver Proyecto &amp; Código
+          </a>
+          <button class="view-pdf-modal-btn app-btn-secondary" data-pdf="Articulos/CIOdD_UCR_Fine-Tunning%20Llama%203.2%20-1B-%20in%20HPC-UCR.pdf" data-title="Fine-Tuning Llama 3.2 (1B) en HPC-UCR" title="Ver Artículo Técnico en PDF">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+           Ver Paper PDF
+          </button>
+         </div>
+        </article>
+
+        <!-- Proyecto 5: Sostenibilidad Ambiental - IDAC -->
+        <article class="project-app-card accent-emerald searchable-item" data-category="interactivo ambiente ods sostenibilidad idac cantones ucr" data-institution="ucr">
+         <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; Estadística</span>
+           <span class="live-pulse"><span class="pulse-dot"></span>App en Vivo</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">84 Cantones</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-base mb-1">
+          IDAC: Desempeño Ambiental Cantonal
+         </h3>
+         <p class="text-xs font-medium text-[#1f6f8b] mb-2.5">
+          Índice multidimensional y validación estadística &middot; Costa Rica 2024&ndash;2026
+         </p>
+         <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">
+          Herramienta metodológica y plataforma interactiva para clasificar el desempeño ecológico cantonal en Costa Rica. Incluye análisis factorial confirmatorio, indicadores de gestión de cuencas, residuos y cobertura, y recomendaciones de política local.
+         </p>
+         <div class="flex flex-wrap gap-1.5 mb-4">
+          <span class="app-tag">IDAC Cantonal</span>
+          <span class="app-tag">ODS Ambientales</span>
+          <span class="app-tag">Multivariado</span>
+          <span class="app-tag">UCR</span>
+         </div>
+         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
+          <a href="https://agmelendez.github.io/sostenibilidadambiental/" target="_blank" rel="noopener noreferrer" class="app-btn-primary flex-1 sm:flex-initial" title="Explorar Panel Interactivo IDAC">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Explorar IDAC
+          </a>
+          <button class="view-pdf-modal-btn app-btn-secondary" data-pdf="Articulos/CIOdD_UCR_Indice%20de%20Desempen%CC%83o%20Ambiental.pdf" data-title="Índice de Desempeño Ambiental en Costa Rica" title="Ver Estudio Completo en PDF">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+           Ver Estudio PDF
+          </button>
+         </div>
+        </article>
+
+        <!-- Proyecto 6: Impacto Económico de Accidentes de Tránsito -->
+        <article class="project-app-card accent-rose searchable-item" data-category="interactivo movilidad transporte accidentes gasto salud ucr" data-institution="ucr">
+         <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+           <span class="doc-tag ucr">UCR &middot; CIOdD</span>
+           <span class="live-pulse"><span class="pulse-dot"></span>App en Vivo</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">2017&ndash;2025</span>
+         </div>
+         <h3 class="font-bold text-gray-800 text-base mb-1">
+          Costo Económico de Accidentes Viales
+         </h3>
+         <p class="text-xs font-medium text-[#1f6f8b] mb-2.5">
+          Dashboard de siniestralidad, pérdidas económicas y salud pública &middot; CR
+         </p>
+         <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">
+          Tablero interactivo para estimar las pérdidas económicas tangibles e intangibles ocasionadas por accidentes de tránsito en Costa Rica. Integra costos per cápita, días de hospitalización y gasto en pólizas SOA/INS con modelado econométrico.
+         </p>
+         <div class="flex flex-wrap gap-1.5 mb-4">
+          <span class="app-tag">Movilidad Segura</span>
+          <span class="app-tag">Economía de la Salud</span>
+          <span class="app-tag">Costos Viales</span>
+          <span class="app-tag">CIOdD-UCR</span>
+         </div>
+         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
+          <a href="https://agmelendez.github.io/gastoaccidentescr/" target="_blank" rel="noopener noreferrer" class="app-btn-primary flex-1 sm:flex-initial" title="Abrir Dashboard de Costos de Accidentes">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+           Abrir Dashboard
+          </a>
+          <button class="view-pdf-modal-btn app-btn-secondary" data-pdf="Articulos/CIOdD_UCR_Impacto%20Accidentes%20en%20Carretera%202025.pdf" data-title="Impacto Accidentes en Carretera 2025" title="Ver Artículo Científico en PDF">
+           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+           Ver Paper PDF
+          </button>
+         </div>
+        </article>
+
+       </div>
+      </section>
+
+      <!-- Sección 4: Informes Técnicos con Visor de Ancho Completo (Sin cortes laterales) -->
       <section class="glass-card section-card rounded-2xl p-6 md:p-8 animate-fade-in stagger-3" id="informes">
        <div class="flex items-center gap-3 mb-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#d9a441] to-[#1f6f8b] flex items-center justify-center">
